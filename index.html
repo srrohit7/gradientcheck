@@ -167,11 +167,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			<tr>
 				<td>Reaction Order (n)</td>
 				<td>					
-					<select id="dr_rxn_order">
+					<!--<select id="dr_rxn_order">
 					<option name="0">0</option>  
 					<option selected name="1">1</option>
 					<option name="2">2</option>
-					</select>
+					</select>-->
+					<input id="dr_rxn_order" type="number" step="any" min="0">
 			 	</td>
 			</tr>
 			<tr>
@@ -561,7 +562,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 					<td><input id="rxn_eff_factor" type="any" class="narrow" readonly step="any"></td>
 					<td style="display:none"><input id="rxn_eff_factor_inlet" type="any" class="narrow" readonly step="any"></td>
 					<td style="display:none"><input id="rxn_eff_factor_outlet" type="any" class="narrow" readonly step="any"></td>
-					<td> / unitless</td
+					<td> / unitless</td>
 				</tr>
 			</tbody>
 		</table>
