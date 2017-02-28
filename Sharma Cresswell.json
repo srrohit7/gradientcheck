@@ -1,0 +1,270 @@
+[
+	{
+		"name": "dr_reaction_phase",
+		"value": "Gas Phase"
+	},
+	{
+		"name": "temp",
+		"value": "636"
+	},
+	{
+		"name": "pressure",
+		"value": "2.2"
+	},
+	{
+		"name": "R_rctr",
+		"value": "0.012"
+	},
+	{
+		"name": "L_bed",
+		"value": "4"
+	},
+	{
+		"name": "dr_cat_shape",
+		"value": "Spheres"
+	},
+	{
+		"name": "R_p",
+		"value": "0.0015"
+	},
+	{
+		"name": "L_p",
+		"value": ""
+	},
+	{
+		"name": "R_p_inner",
+		"value": ""
+	},
+	{
+		"name": "rxn_rate",
+		"value": "0.0001062"
+	},
+	{
+		"name": "rxn_enthalpy",
+		"value": "-1.77e6"
+	},
+	{
+		"name": "dr_rxn_order",
+		"value": "1"
+	},
+	{
+		"name": "rxn_activation_energy",
+		"value": "7.28e4"
+	},
+	{
+		"name": "rxn_conversion1",
+		"value": "0.722"
+	},
+	{
+		"name": "cat_rho_bulk",
+		"value": "1000"
+	},
+	{
+		"name": "cat_void_frac",
+		"value": "0.44"
+	},
+	{
+		"name": "cat_thermal_cond",
+		"value": "0.2"
+	},
+	{
+		"name": "cat_surf_area",
+		"value": "11"
+	},
+	{
+		"name": "cat_pore_volume",
+		"value": "3.8e-7"
+	},
+	{
+		"name": "cat_pore_tortuosity",
+		"value": "3"
+	},
+	{
+		"name": "dr_num_reactants",
+		"value": "Two"
+	},
+	{
+		"name": "dr_num_products",
+		"value": "One"
+	},
+	{
+		"name": "molfrac1",
+		"value": "0.018"
+	},
+	{
+		"name": "molfrac2",
+		"value": "0.206"
+	},
+	{
+		"name": "molfrac3",
+		"value": "0"
+	},
+	{
+		"name": "molfrac4",
+		"value": ""
+	},
+	{
+		"name": "molfrac5",
+		"value": "0.776"
+	},
+	{
+		"name": "fluidvisc1",
+		"value": "1.54e-5"
+	},
+	{
+		"name": "fluidvisc2",
+		"value": "3.61e-5"
+	},
+	{
+		"name": "fluidvisc3",
+		"value": "1e-5"
+	},
+	{
+		"name": "fluidvisc4",
+		"value": ""
+	},
+	{
+		"name": "fluidvisc5",
+		"value": "3.08e-5"
+	},
+	{
+		"name": "heatcapacity1",
+		"value": "3047"
+	},
+	{
+		"name": "heatcapacity2",
+		"value": "1014"
+	},
+	{
+		"name": "heatcapacity3",
+		"value": "1000"
+	},
+	{
+		"name": "heatcapacity4",
+		"value": ""
+	},
+	{
+		"name": "heatcapacity5",
+		"value": "1083"
+	},
+	{
+		"name": "thermalcond1",
+		"value": "0.067"
+	},
+	{
+		"name": "thermalcond2",
+		"value": "0.0536"
+	},
+	{
+		"name": "thermalcond3",
+		"value": "0.05"
+	},
+	{
+		"name": "thermalcond4",
+		"value": ""
+	},
+	{
+		"name": "thermalcond5",
+		"value": "0.046"
+	},
+	{
+		"name": "difvol1",
+		"value": "86.6"
+	},
+	{
+		"name": "difvol2",
+		"value": "16.3"
+	},
+	{
+		"name": "difvol3",
+		"value": "68.2"
+	},
+	{
+		"name": "difvol4",
+		"value": ""
+	},
+	{
+		"name": "difvol5",
+		"value": "18.5"
+	},
+	{
+		"name": "liq_density1",
+		"value": ""
+	},
+	{
+		"name": "liq_density2",
+		"value": ""
+	},
+	{
+		"name": "liq_density3",
+		"value": ""
+	},
+	{
+		"name": "liq_density4",
+		"value": ""
+	},
+	{
+		"name": "liq_density5",
+		"value": ""
+	},
+	{
+		"name": "molar_boil_vol1",
+		"value": ""
+	},
+	{
+		"name": "molar_boil_vol2",
+		"value": ""
+	},
+	{
+		"name": "molar_boil_vol3",
+		"value": ""
+	},
+	{
+		"name": "molar_boil_vol4",
+		"value": ""
+	},
+	{
+		"name": "molar_boil_vol5",
+		"value": ""
+	},
+	{
+		"name": "wilke_assoc_phi2",
+		"value": ""
+	},
+	{
+		"name": "wilke_assoc_phi3",
+		"value": ""
+	},
+	{
+		"name": "wilke_assoc_phi4",
+		"value": ""
+	},
+	{
+		"name": "wilke_assoc_phi5",
+		"value": ""
+	},
+	{
+		"name": "molweight1",
+		"value": "58.1"
+	},
+	{
+		"name": "molweight2",
+		"value": "32"
+	},
+	{
+		"name": "molweight3",
+		"value": "98.1"
+	},
+	{
+		"name": "molweight4",
+		"value": ""
+	},
+	{
+		"name": "molweight5",
+		"value": "28"
+	},
+	{
+		"name": "notes_section",
+		"value": "surface area and pore volume from paper seemed too low, multiplied by 10^6 to give reasonable numbers\r\nA=Butane,B=Oxygen,C=notfed,D=Nitrogen"
+	}
+]
