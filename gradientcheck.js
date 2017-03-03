@@ -1623,7 +1623,7 @@ $(document).ready(function(){
 
 
 
-    var ndim_BL_thickness = math.eval('diff_mixture/ndim_massXfer_coeff/cat_effective_radius',catscope);
+    var ndim_BL_thickness = math.eval('diff_mixture/ndim_massXfer_coeff/aris_L',catscope);
     catscope.ndim_BL_thickness = ndim_BL_thickness;
   });
 
@@ -1851,7 +1851,7 @@ $(document).ready(function(){
     var rxn_externaltemp_grad_out = "#rxn_externaltemp_grad"; 
 
     //perform calculations    
-    var rxn_surftemperature = math.eval('-rxn_enthalpy*ndim_massXfer_coeff/ndim_heatXfer_coeff*(rxn_avg_bulk_concentration1 - rxn_surfconcentration) + temp',catscope);
+    var rxn_surftemperature = math.eval('-rxn_enthalpy*ndim_massXfer_coeff/ndim_heatXfer_coeff*(res_bulkconc1 - rxn_surfconcentration) + temp',catscope);
     catscope.rxn_surftemperature = rxn_surftemperature; 
 
     var rxn_externaltemp_grad = math.eval('rxn_surftemperature - temp',catscope);
@@ -2548,13 +2548,13 @@ $(document).ready(function(){
     var BLcoord = math.eval('1 + ndim_BL_thickness',catscope);
     
     var fxnConcentration = math.compile('rxn_surfconcentration*cosh(rxn_thiele*iterNdimPosition)/cosh(rxn_thiele)');
-    var fxnConcentrationInlet = math.compile('rxn_surfconcentration_inlet*cosh(rxn_thiele_inlet*iterNdimPosition)/cosh(rxn_thiele_inlet)');
-    var fxnConcentrationOutlet = math.compile('rxn_surfconcentration_outlet*cosh(rxn_thiele_outlet*iterNdimPosition)/cosh(rxn_thiele_outlet)');
+    //var fxnConcentrationInlet = math.compile('rxn_surfconcentration_inlet*cosh(rxn_thiele_inlet*iterNdimPosition)/cosh(rxn_thiele_inlet)');
+    //var fxnConcentrationOutlet = math.compile('rxn_surfconcentration_outlet*cosh(rxn_thiele_outlet*iterNdimPosition)/cosh(rxn_thiele_outlet)');
     var fxnTemperature = math.compile('rxn_surftemperature - rxn_enthalpy*diff_effective/cat_thermal_cond*(rxn_surfconcentration - rxn_surfconcentration*cosh(rxn_thiele*iterNdimPosition)/cosh(rxn_thiele))');
 
-    var fxnBLConcentration = math.compile('(rxn_avg_bulk_concentration1 - rxn_surfconcentration)*iterNdimPosition/ndim_BL_thickness + rxn_avg_bulk_concentration1 - (rxn_avg_bulk_concentration1 - rxn_surfconcentration)/ndim_BL_thickness*(1 + ndim_BL_thickness)');
-    var fxnBLConcentrationInlet = math.compile('(res_bulkconc1 - rxn_surfconcentration_inlet)*iterNdimPosition/ndim_BL_thickness + res_bulkconc1 - (res_bulkconc1 - rxn_surfconcentration_inlet)/ndim_BL_thickness*(1 + ndim_BL_thickness)');
-    var fxnBLConcentrationOutlet = math.compile('(rxn_bulkconc_outlet1 - rxn_surfconcentration_outlet)*iterNdimPosition/ndim_BL_thickness + rxn_bulkconc_outlet1 - (rxn_bulkconc_outlet1 - rxn_surfconcentration_outlet)/ndim_BL_thickness*(1 + ndim_BL_thickness)');
+    var fxnBLConcentration = math.compile('(res_bulkconc1 - rxn_surfconcentration)*iterNdimPosition/ndim_BL_thickness + res_bulkconc1 - (res_bulkconc1 - rxn_surfconcentration)/ndim_BL_thickness*(1 + ndim_BL_thickness)');
+    //var fxnBLConcentrationInlet = math.compile('(res_bulkconc1 - rxn_surfconcentration_inlet)*iterNdimPosition/ndim_BL_thickness + res_bulkconc1 - (res_bulkconc1 - rxn_surfconcentration_inlet)/ndim_BL_thickness*(1 + ndim_BL_thickness)');
+    //var fxnBLConcentrationOutlet = math.compile('(rxn_bulkconc_outlet1 - rxn_surfconcentration_outlet)*iterNdimPosition/ndim_BL_thickness + rxn_bulkconc_outlet1 - (rxn_bulkconc_outlet1 - rxn_surfconcentration_outlet)/ndim_BL_thickness*(1 + ndim_BL_thickness)');
     var fxnBLTemperature = math.compile('(temp - rxn_surftemperature)*iterNdimPosition/ndim_BL_thickness + temp - (temp - rxn_surftemperature)/ndim_BL_thickness*(1 + ndim_BL_thickness)');
 
     var concentration = [];
@@ -2566,32 +2566,32 @@ $(document).ready(function(){
       catscope.iterNdimPosition = position[i];
       
       if (catscope.iterNdimPosition > (1 + catscope.ndim_BL_thickness)){ //for outside of the boundary layer
-        concentration[i] = catscope.rxn_avg_bulk_concentration1;
+        concentration[i] = catscope.res_bulkconc1;
         concentrationInlet[i] = catscope.res_bulkconc1;
-        concentrationOutlet[i] = catscope.rxn_bulkconc_outlet1;
+        concentrationOutlet[i] = catscope.res_bulkconc1;
         temperature[i] = catscope.temp;
       } else if (catscope.iterNdimPosition > 1 && catscope.iterNdimPosition <= (1 + catscope.ndim_BL_thickness)){ //for inside of the boundary layer but outside particle
         concentration[i] = fxnBLConcentration.eval(catscope);
-        concentrationInlet[i] = fxnBLConcentrationInlet.eval(catscope);
-        concentrationOutlet[i] = fxnBLConcentrationOutlet.eval(catscope);
+        //concentrationInlet[i] = fxnBLConcentrationInlet.eval(catscope);
+        //concentrationOutlet[i] = fxnBLConcentrationOutlet.eval(catscope);
         temperature[i] = fxnBLTemperature.eval(catscope);
       } else if (catscope.iterNdimPosition <= 1){ //for inside the particle
         concentration[i] = fxnConcentration.eval(catscope);
-        concentrationInlet[i] = fxnConcentrationInlet.eval(catscope);
-        concentrationOutlet[i] = fxnConcentrationOutlet.eval(catscope);
+        //concentrationInlet[i] = fxnConcentrationInlet.eval(catscope);
+        //concentrationOutlet[i] = fxnConcentrationOutlet.eval(catscope);
         temperature[i] = fxnTemperature.eval(catscope);
       }
     }
 
     var conc = two1Dto2D(position,concentration);
-    var concInlet = two1Dto2D(position,concentrationInlet);
-    var concOutlet = two1Dto2D(position,concentrationOutlet);
+    //var concInlet = two1Dto2D(position,concentrationInlet);
+    //var concOutlet = two1Dto2D(position,concentrationOutlet);
     var temp = two1Dto2D(position,temperature);
     
     $.plot("#internalgradplot", [
       { data: conc, label: "C<sub>A,Average</sub>" },
-      { data: concInlet, label: "C<sub>A,Inlet</sub>"},
-      { data: concOutlet, label: "C<sub>A,Outlet</sub>"},
+      //{ data: concInlet, label: "C<sub>A,Inlet</sub>"},
+      //{ data: concOutlet, label: "C<sub>A,Outlet</sub>"},
       { data: temp, yaxis: 2, label: "Temperature"}
     ], {
       xaxes: [ { axisLabel: 'Position in Catalyst Normalized to Radius / nondimensional' } ],
