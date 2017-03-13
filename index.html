@@ -273,9 +273,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<td id="hide_thermalcond2" style="display: none;"><input id="thermalcond2" type="number" step="any" class="nar"></td>
 				<td><input id="thermalcond3" type="number" step="any" class="nar"></td>
 				<td id="hide_thermalcond4" style="display: none;"><input id="thermalcond4" type="number" step="any" class="nar"></td>
-				<td><input id="thermalcond5" type="number" step="any" class="nar"></td>
-				<td><button type="button" id="button_thermalcond" class="	plainButton"><span>Estimate k<sub>f</sub></span></button></td>	
-				<td> / W × m<sup>-1</sup> × K<sup>-1</sup></td>
+				<td><input id="thermalcond5" type="number" step="any" class="nar"></td>	
+				<!--<td> / W × m<sup>-1</sup> × K<sup>-1</sup></td>-->
+				<td><button type="button" id="button_thermalcond" class="	plainButton"><span>Estimate k<sub>f</sub></span></button></td>
 			</tr>
 			<tbody id="tbody_gas_dvol"><!-- for hiding in the case of liquids -- visible by default -->
 				<tr>
@@ -806,18 +806,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	<!----------- End Outputs Section ------------>
 <!----------------------- End Content --------------------------->
 <div id="dialog_1" title="Concentrate">
-    <table>
-		<tr id="tr_reactants_products_diluent_header_fuller" style='font-size:16px;text-decoration:underline;' align="center">
+    <table class="cat-form-narrow">
+		<tr id="tr_reactants_products_diluent_header_joback" style='font-size:16px;text-decoration:underline;' align="center">
 			<td></td>
-			<td>Reactant A</td>
-			<td>Product B</td>
-			<td  id="joback_3" style="display:none">Diluent C</td>
-			<td></td>
+			<td id="joback_1">Reactant A</td>
+			<td id="joback_3">Product B</td>
+			<td  id="joback_5">Diluent C</td>
 		</tr>
-		<tr>
-			<td>Normal Boiling Point</td>
-			<td>
-		</tr>
+
     	<tr align="Center">
     		<td >
     		    Groups
@@ -825,10 +821,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     		<td  id="joback_1" >
     			# of Each
     		</td>
-    		<td  id="joback_2" >
+    		<td  id="joback_2" style="display:none">
     			# of Each
     		</td>
-    		<td id="joback_3" style="display:none">
+    		<td id="joback_3">
+    			# of Each
+    		</td>
+    		<td  id="joback_4" style="display:none">
+    			# of Each
+    		</td>
+    		<td id="joback_5">
     			# of Each
     		</td>
     	</tr>
@@ -836,7 +838,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			<td colspan="2" style="font-style: italic;"><button id="joback_show_nr" class="hide"><span>+</span></button>&nbsp;&nbsp;Non-ring&nbsp;</td>
 			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
 		</tr>    
-		<tr id="joback_nr" style="display:none">
+		<tr id="joback_nr">
 		    <td>
 		        <table class="cat-form-narrow">
 		            <tr>
@@ -873,7 +875,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nr1_10" type="number" min="0" step="any"></td></tr>
                 </table>    
 		    </td>
-		    <td id="joback_2">
+		    <td id="joback_2" style="display:none">
                 <table class="cat-form-narrow">
                     <tr>
                         <td>
@@ -891,7 +893,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nr2_10" type="number" min="0" step="any"></td></tr>                
                 </table>    
             </td>
-            <td id="joback_3" style="display:none">
+            <td id="joback_3">
                 <table class="cat-form-narrow">
                     <tr>
                         <td>
@@ -909,8 +911,496 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nr3_10" type="number" min="0" step="any"></td></tr>               
                 </table>    
             </td>
+            <td id="joback_4" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_nr4_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_nr4_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr4_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr4_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr4_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr4_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr4_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr4_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr4_9" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr4_10" type="number" min="0" step="any"></td></tr>               
+                </table>    
+            </td>
+            <td id="joback_5">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_nr5_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_nr5_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr5_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr5_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr5_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr5_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr5_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr5_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr5_9" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nr5_10" type="number" min="0" step="any"></td></tr>               
+                </table>    
+            </td>
 		</tr>
-	</table>
+		<tr class="hrcontainer">
+			<td colspan="2" style="font-style: italic;"><button id="joback_show_r" class="hide"><span>+</span></button>&nbsp;&nbsp;Ring&nbsp;</td>
+			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
+		</tr> 
+		<tr id="joback_r" style="display:none">
+		    <td>
+		        <table class="cat-form-narrow">
+                    <tr><td>-CH2-</td></tr>
+                    <tr><td>>CH-</td></tr>
+                    <tr><td>>CH<</td></tr>	
+                    <tr><td>=CH2</td></tr>
+                    <tr><td>=CH-</td></tr>
+                    <tr><td>=C<</td></tr>
+		        </table>
+		    </td>
+		    <td id="joback_1">
+		        <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_r1_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_r1_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r1_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r1_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r1_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r1_6" type="number" min="0" step="any"></td></tr>
+                </table>    
+		    </td>
+		    <td id="joback_2" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_r2_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_r2_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r2_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r2_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r2_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r2_6" type="number" min="0" step="any"></td></tr>               
+                </table>    
+            </td>
+            <td id="joback_3">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_r3_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_r3_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r3_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r3_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r3_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r3_6" type="number" min="0" step="any"></td></tr>              
+                </table>    
+            </td>
+            <td id="joback_4" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_r4_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_r4_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r4_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r4_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r4_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r4_6" type="number" min="0" step="any"></td></tr>             
+                </table>    
+            </td>
+            <td id="joback_5">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_r5_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_r5_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r5_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r5_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r5_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_r5_6" type="number" min="0" step="any"></td></tr>             
+                </table>    
+            </td>
+		 </tr> 
+		 
+		 <tr class="hrcontainer">
+			<td colspan="2" style="font-style: italic;"><button id="joback_show_halo" class="hide"><span>+</span></button>&nbsp;&nbsp;Halogen Groups&nbsp;</td>
+			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
+		</tr>
+		<tr id="joback_halo" style="display:none">
+		    <td>
+		        <table class="cat-form-narrow">
+                    <tr><td>-F</td></tr>
+                    <tr><td>-Cl</td></tr>
+                    <tr><td>-Br</td></tr>
+                    <tr><td>-I</td></tr>
+		        </table>
+		    </td>
+		    <td id="joback_1">
+		        <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_halo1_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_halo1_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo1_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo1_4" type="number" min="0" step="any"></td></tr>
+                </table>    
+		    </td>
+		    <td id="joback_2" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_halo2_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_halo2_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo2_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo2_4" type="number" min="0" step="any"></td></tr>            
+                </table>    
+            </td>
+            <td id="joback_3">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_halo3_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_halo3_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo3_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo3_4" type="number" min="0" step="any"></td></tr>            
+                </table>    
+            </td>
+            <td id="joback_4" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_halo4_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_halo4_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo4_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo4_4" type="number" min="0" step="any"></td></tr>       
+                </table>    
+            </td>
+            <td id="joback_5">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_halo5_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_halo5_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo5_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_halo5_4" type="number" min="0" step="any"></td></tr>         
+                </table>    
+            </td>
+		</tr> 
+		<tr class="hrcontainer">
+			<td colspan="2" style="font-style: italic;"><button id="joback_show_oxy" class="hide"><span>+</span></button>&nbsp;&nbsp;Oxygen Groups&nbsp;</td>
+			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
+		</tr>
+		<tr id="joback_oxy" style="display:none">
+		    <td>
+		        <table class="cat-form-narrow">
+		            <tr>
+                        <td>
+                            -OH(alcohol)
+                        </td>
+                    </tr>
+                    <tr><td>-OH(phenol)</td></tr>
+                    <tr><td>-O-(nonring)</td></tr>
+                    <tr><td>-O-(ring)</td></tr>	
+                    <tr><td>>C=O(nonring)</td></tr>
+                    <tr><td>>C=O(ring)</td></tr>
+                    <tr><td>-CH=O</td></tr>
+                    <tr><td>-COOH(acid)</td></tr>
+                    <tr><td>-COO-(ester)</td></tr>
+                    <tr><td>=O(other)</td></tr>
+		        </table>
+		    </td>
+		    <td id="joback_1">
+		        <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_oxy1_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_oxy1_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy1_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy1_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy1_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy1_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy1_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy1_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy1_9" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy1_10" type="number" min="0" step="any"></td></tr>
+                </table>    
+		    </td>
+		    <td id="joback_2" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_oxy2_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_oxy2_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy2_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy2_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy2_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy2_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy2_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy2_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy2_9" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy2_10" type="number" min="0" step="any"></td></tr>                
+                </table>    
+            </td>
+            <td id="joback_3">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_oxy3_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_oxy3_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy3_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy3_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy3_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy3_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy3_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy3_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy3_9" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy3_10" type="number" min="0" step="any"></td></tr>               
+                </table>    
+            </td>
+            <td id="joback_4" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_oxy4_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_oxy4_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy4_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy4_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy4_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy4_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy4_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy4_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy4_9" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy4_10" type="number" min="0" step="any"></td></tr>               
+                </table>    
+            </td>
+            <td id="joback_5">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_oxy5_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_oxy5_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy5_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy5_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy5_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy5_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy5_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy5_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy5_9" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_oxy5_10" type="number" min="0" step="any"></td></tr>               
+                </table>    
+            </td>
+		</tr>
+		<tr class="hrcontainer">
+			<td colspan="2" style="font-style: italic;"><button id="joback_show_nitro" class="hide"><span>+</span></button>&nbsp;&nbsp;Nitrogen Groups&nbsp;</td>
+			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
+		</tr>
+		<tr id="joback_nitro" style="display:none">
+		    <td>
+		        <table class="cat-form-narrow">
+		            <tr>
+                        <td>
+                            -NH2
+                        </td>
+                    </tr>
+                    <tr><td>>NH(nonring)</td></tr>
+                    <tr><td>>NH(ring)</td></tr>
+                    <tr><td>>N-(nonring)</td></tr>	
+                    <tr><td>>N-(ring)</td></tr>
+                    <tr><td>=N-(nonring)</td></tr>
+                    <tr><td>=N-(ring)</td></tr>
+                    <tr><td>-CN</td></tr>
+                    <tr><td>-NO2</td></tr>
+		        </table>
+		    </td>
+		    <td id="joback_1">
+		        <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_nitro1_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_nitro1_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro1_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro1_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro1_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro1_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro1_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro1_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro1_9" type="number" min="0" step="any"></td></tr>
+                </table>    
+		    </td>
+		    <td id="joback_2" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_nitro2_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_nitro2_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro2_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro2_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro2_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro2_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro2_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro2_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro2_9" type="number" min="0" step="any"></td></tr>           
+                </table>    
+            </td>
+            <td id="joback_3">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_nitro3_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_nitro3_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro3_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro3_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro3_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro3_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro3_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro3_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro3_9" type="number" min="0" step="any"></td></tr>              
+                </table>    
+            </td>
+            <td id="joback_4" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_nitro4_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_nitro4_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro4_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro4_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro4_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro4_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro4_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro4_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro4_9" type="number" min="0" step="any"></td></tr>            
+                </table>    
+            </td>
+            <td id="joback_5">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_nitro5_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_nitro5_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro5_3" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro5_4" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro5_5" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro5_6" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro5_7" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro5_8" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_nitro5_9" type="number" min="0" step="any"></td></tr>           
+                </table>    
+            </td>
+		</tr>
+		<tr class="hrcontainer">
+			<td colspan="2" style="font-style: italic;"><button id="joback_show_sulphur" class="hide"><span>+</span></button>&nbsp;&nbsp;Sulphur Groups&nbsp;</td>
+			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
+		</tr> 
+		<tr id="joback_sulphur" style="display:none">
+		    <td>
+		        <table class="cat-form-narrow">
+                    <tr><td>-SH</td></tr>
+                    <tr><td>-S-(nonring)</td></tr>
+                    <tr><td>-S-(ring)</td></tr>
+		        </table>
+		    </td>
+		    <td id="joback_1">
+		        <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_sulphur1_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_sulphur1_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_sulphur1_3" type="number" min="0" step="any"></td></tr>
+                </table>    
+		    </td>
+		    <td id="joback_2" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_sulphur2_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_sulphur2_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_sulphur2_3" type="number" min="0" step="any"></td></tr>           
+                </table>    
+            </td>
+            <td id="joback_3">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_sulphur3_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_sulphur3_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_sulphur3_3" type="number" min="0" step="any"></td></tr>          
+                </table>    
+            </td>
+            <td id="joback_4" style="display:none">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_sulphur4_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_sulphur4_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_sulphur4_3" type="number" min="0" step="any"></td></tr>    
+                </table>    
+            </td>
+            <td id="joback_5">
+                <table class="cat-form-narrow">
+                    <tr>
+                        <td>
+                            <input id="joback_sulphur5_1" type="number" min="0" step="any">
+                        </td>
+                    </tr>
+                    <tr><td><input id="joback_sulphur5_2" type="number" min="0" step="any"></td></tr>
+                    <tr><td><input id="joback_sulphur5_3" type="number" min="0" step="any"></td></tr>      
+                </table>    
+            </td>
+		</tr> 
+
+		</table>
  </div>
  
 <div id="dialog_fuller_dvol" title="Estimate Diffusion Volumes of Pure Components">
