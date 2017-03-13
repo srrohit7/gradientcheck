@@ -1,0 +1,240 @@
+<div id="dialog_Joback_kf" title="Estimate Molar Volumes of Pure Components">
+<table class="cat-form-narrow">
+	<tr id="tr_reactants_products_diluent_header_Joback" style='font-size:16px;text-decoration:underline;'>
+		<td></td>
+		<td>Reactant A</td>
+		<td>Product B</td>
+		<td>Diluent C</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>
+			<table class="cat-form-narrow">
+				<tr><td>Groups</td></tr>
+				<tr>
+			<td colspan="2" valign="middle"><button id="hide_catprops" class="hide"><span>+</span></button><hr class="clcd-output"></td> 
+		</tr>
+				<tr><td>-CH3</td></tr>
+				<tr><td>-CH2-</td></tr>
+				<tr><td>>CH-</td></tr>
+				<tr><td align="left">&rarr;&nbsp;In methyl esters and ethers&nbsp;</td></tr>
+				<tr><td align="left">&rarr;&nbsp;In ethyl esters and ethers&nbsp;</td></tr>
+				<tr><td align="left">&rarr;&nbsp;In higher esters and ethers&nbsp;</td></tr>
+				<tr><td align="left">&rarr;&nbsp;In acids&nbsp;</td></tr>
+				<tr><td align="left">&rarr;&nbsp;Joined to S, P, and N&nbsp;</td></tr>
+				<tr><td>N, doubly bonded</td></tr>
+				<tr><td align="left">&rarr;&nbsp;In primary amines&nbsp;</td></tr>
+				<tr><td align="left">&rarr;&nbsp;In secondary amines&nbsp;</td></tr>
+				<tr><td>Br</td></tr>
+				<tr><td>Cl</td></tr>
+				<tr><td>F</td></tr>
+				<tr><td>I</td></tr>
+				<tr><td>S</td></tr>
+				<tr><td>Ring, three-membered</td></tr>
+				<tr><td>&rarr;&nbsp;Four-membered</td></tr>
+				<tr><td>&rarr;&nbsp;Five-membered</td></tr>
+				<tr><td>&rarr;&nbsp;Six-membered</td></tr>
+				<tr><td>&rarr;&nbsp;Naphthalene</td></tr>
+				<tr><td>&rarr;&nbsp;Anthracene</td></tr>
+				<tr><td><hr class="popup"></td></tr>
+				<tr><td>Mol. Formula:</td></tr>
+				<tr><td>Mol. Weight:</td></tr>
+				<tr><td>Mol. Volume:</td></tr>
+			</table>
+		</td>
+
+
+
+		<td>
+			<table class="cat-form-narrow">
+				<tr><td># of Each</td></tr>
+				<tr><td><input id="Joback_C1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_H1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_O1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_MeEs_O1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_EtEs_O1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_HiEs_O1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Ac_O1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_tospn_O1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_dbl_N1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_pri_N1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_sec_N1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Br1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Cl1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_F1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_I1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_S1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringThr1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFo1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFi1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringSi1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_nphth1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_anthr1" type="number" step="any" class="nar"></td></tr>
+				<tr><td><hr class="popup"></td></tr>
+				<tr><td><input id="Joback_molformula1" type="any" readonly class="nar"></td></tr>
+				<tr><td><input id="Joback_molweight1" type="number" readonly step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_kf1" type="number" readonly step="any" class="nar"></td></tr>
+			</table>
+		</td>
+
+		<td id="hide_column_kf2" style="display: none;">
+			<table class="cat-form-narrow">
+				<tr><td># of Each</td></tr>
+				<tr><td><input id="Joback_C2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_H2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_O2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_MeEs_O2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_EtEs_O2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_HiEs_O2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Ac_O2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_tospn_O2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_dbl_N2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_pri_N2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_sec_N2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Br2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Cl2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_F2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_I2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_S2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringThr2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFo2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFi2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringSi2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_nphth2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_anthr2" type="number" step="any" class="nar"></td></tr>
+				<tr><td><hr class="popup"></td></tr>
+				<tr><td><input id="Joback_molformula2" type="any" readonly class="nar"></td></tr>
+				<tr><td><input id="Joback_molweight2" type="number" readonly step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_kf2" type="number" readonly step="any" class="nar"></td></tr>
+			</table>
+		</td>
+
+		<td>
+			<table class="cat-form-narrow">
+				<tr><td># of Each</td></tr>
+				<tr><td><input id="Joback_C3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_H3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_O3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_MeEs_O3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_EtEs_O3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_HiEs_O3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Ac_O3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_tospn_O3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_dbl_N3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_pri_N3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_sec_N3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Br3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Cl3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_F3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_I3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_S3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringThr3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFo3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFi3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringSi3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_nphth3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_anthr3" type="number" step="any" class="nar"></td></tr>
+				<tr><td><hr class="popup"></td></tr>
+				<tr><td><input id="Joback_molformula3" type="any" readonly class="nar"></td></tr>
+				<tr><td><input id="Joback_molweight3" type="number" readonly step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_kf3" type="number" readonly step="any" class="nar"></td></tr>
+			</table>
+		</td>
+
+		<td id="hide_column_kf4" style="display: none;">
+			<table class="cat-form-narrow">
+				<tr><td># of Each</td></tr>
+				<tr><td><input id="Joback_C4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_H4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_O4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_MeEs_O4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_EtEs_O4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_HiEs_O4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Ac_O4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_tospn_O4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_dbl_N4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_pri_N4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_sec_N4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Br4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Cl4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_F4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_I4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_S4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringThr4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFo4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFi4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringSi4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_nphth4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_anthr4" type="number" step="any" class="nar"></td></tr>
+				<tr><td><hr class="popup"></td></tr>
+				<tr><td><input id="Joback_molformula4" type="any" readonly class="nar"></td></tr>
+				<tr><td><input id="Joback_molweight4" type="number" readonly step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_kf4" type="number" readonly step="any" class="nar"></td></tr>
+			</table>
+		</td>
+
+		<td>
+			<table class="cat-form-narrow">
+				<tr><td># of Each</td></tr>
+				<tr><td><input id="Joback_C5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_H5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_O5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_MeEs_O5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_EtEs_O5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_HiEs_O5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Ac_O5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_tospn_O5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_dbl_N5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_pri_N5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_sec_N5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Br5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_Cl5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_F5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_I5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_S5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringThr5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFo5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringFi5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_ringSi5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_nphth5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_anthr5" type="number" step="any" class="nar"></td></tr>
+				<tr><td><hr class="popup"></td></tr>
+				<tr><td><input id="Joback_molformula5" type="any" readonly class="nar"></td></tr>
+				<tr><td><input id="Joback_molweight5" type="number" readonly step="any" class="nar"></td></tr>
+				<tr><td><input id="Joback_kf5" type="number" readonly step="any" class="nar"></td></tr>
+			</table>
+		</td>
+		<td>
+			<table class="cat-form-narrow">
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td>/ g × mol<sup>-1</sup></td></tr>
+				<tr><td>/ cm<sup>3</sup> × mol<sup>-1</sup></td></tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</div>

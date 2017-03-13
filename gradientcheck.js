@@ -175,14 +175,14 @@ $(document).ready(function(){
       $('#tr_reactants_products_diluent_header_lebas').html('<td></td><td>Reactant A</td><td>Product B</td><td>Diluent C</td><td></td>') //header reads A, B, C
       $('input.nar').css('max-width','110px'); //change width of input cells
       //hide BOTH 2 and 4
-      $('#hide_molweight2,#hide_molweight4,#hide_fluidvisc2,#hide_fluidvisc4,#hide_heatcapacity2,#hide_heatcapacity4,#hide_thermalcond2,#hide_thermalcond4,#hide_molfrac2,#hide_molfrac4,#hide_res_gasdens2,#hide_res_gasdens4,#hide_difvol2,#hide_difvol4,#hide_column_dvol2,#hide_column_dvol4,#hide_column_vb2,#hide_column_vb4,#hide_molar_boil_vol2,#hide_molar_boil_vol4,#hide_liq_density2,#hide_liq_density4,#hide_wilke_assoc_phi2,#hide_wilke_assoc_phi4,#tbody_limitingreactant').hide('fast');
+      $('#hide_molweight2,#hide_molweight4,#hide_fluidvisc2,#hide_fluidvisc4,#hide_heatcapacity2,#hide_heatcapacity4,#hide_thermalcond2,#hide_thermalcond4,#hide_molfrac2,#hide_molfrac4,#hide_res_gasdens2,#hide_res_gasdens4,#hide_difvol2,#hide_difvol4,#hide_column_dvol2,#hide_column_dvol4,#hide_column_vb2,#hide_column_vb4,#hide_molar_boil_vol2,#hide_molar_boil_vol4,#hide_liq_density2,#hide_liq_density4,#hide_wilke_assoc_phi2,#hide_wilke_assoc_phi4,#tbody_limitingreactant,#joback_3').hide('fast');
     } else if ($('#dr_num_reactants').val() == "Two" && $('#dr_num_products').val() == "One"){ //OPTION B -- hide 4, header reads A, B, C, D
       $('#tr_reactants_products_diluent_header').html('<td></td><td class="MainReact">Main<br>Reactant A</td><td>Reactant B</td><td>Product C</td><td>Diluent D</td><td></td>') //header reads A, B, C, D
       $('#tr_reactants_products_diluent_header_igdens').html('<td></td><td>Reactant A</td><td>Reactant B</td><td>Product C</td><td>Diluent D</td><td></td>') //header reads A, B, C, D
       $('#tr_reactants_products_diluent_header_fuller').html('<td></td><td>Reactant A</td><td>Reactant B</td><td>Product C</td><td>Diluent D</td><td></td>') //header reads A, B, C, D
       $('#tr_reactants_products_diluent_header_lebas').html('<td></td><td>Reactant A</td><td>Reactant B</td><td>Product C</td><td>Diluent D</td><td></td>') //header reads A, B, C, D
       $('input.nar').css('max-width','100px'); //change width of input cells
-      $('#hide_molweight2,#hide_fluidvisc2,#hide_heatcapacity2,#hide_thermalcond2,#hide_molfrac2,#hide_res_gasdens2,#hide_difvol2,#hide_column_dvol2,#hide_column_vb2,#hide_molar_boil_vol2,#hide_liq_density2,#hide_wilke_assoc_phi2,#tbody_limitingreactant').show('fast'); //show 2
+      $('#hide_molweight2,#hide_fluidvisc2,#hide_heatcapacity2,#hide_thermalcond2,#hide_molfrac2,#hide_res_gasdens2,#hide_difvol2,#hide_column_dvol2,#hide_column_vb2,#hide_molar_boil_vol2,#hide_liq_density2,#hide_wilke_assoc_phi2,#tbody_limitingreactant,#joback_3').show('fast'); //show 2
       $('#hide_molweight4,#hide_fluidvisc4,#hide_heatcapacity4,#hide_thermalcond4,#hide_molfrac4,#hide_res_gasdens4,#hide_difvol4,#hide_column_dvol4,#hide_column_vb4,#hide_molar_boil_vol4,#hide_liq_density4,#hide_wilke_assoc_phi4').hide('fast'); //hide 4
     } else if ($('#dr_num_reactants').val() == "One" && $('#dr_num_products').val() == "Two"){ //OPTION C -- hide 2, header reads A, B, C, D
       $('#tr_reactants_products_diluent_header').html('<td></td><td class="MainReact">Main<br>Reactant A</td><td>Product B</td><td>Product C</td><td>Diluent D</td><td></td>') //header reads A, B, C, D
@@ -2639,13 +2639,28 @@ $(document).ready(function(){
           }
       ]
   });
-
+    
 
   $( "#button_fuller_dvol" ).click(function( event ) {
 	$( "#dialog_fuller_dvol" ).dialog( "open" );
 	event.preventDefault();
   });
 
+});
+
+$(document).ready(function(){
+        $("#dialog_1").dialog({
+            autoOpen: false,
+        });
+        $("#button_thermalcond").on('click',function(){
+              $("#dialog_1").dialog("open"); 
+        });
+});
+
+$(document).ready(function(){
+        $("#joback_show_nr").on('click',function(){
+            $("#joback_nr").toggle("fast")
+        });
 });
 
 ////////////////////////////////////////////////////////////////////////////
