@@ -681,6 +681,18 @@ $(document).ready(function(){
   // Function to get the inputs to the Joback method popup into catscope
   $(".initialize,#temp,#pressure").on('keyup keydown change click', function (){
     
+    var joback_boiling_1=$("#joback_boiling_1").val().toNum();
+    var joback_boiling_2=$("#joback_boiling_2").val().toNum();
+    var joback_boiling_3=$("#joback_boiling_3").val().toNum();
+    var joback_boiling_4=$("#joback_boiling_4").val().toNum();
+    var joback_boiling_5=$("#joback_boiling_5").val().toNum();
+    
+    catscope.joback_boiling_1=joback_boiling_1;
+    catscope.joback_boiling_2=joback_boiling_2;
+    catscope.joback_boiling_3=joback_boiling_3;
+    catscope.joback_boiling_4=joback_boiling_4;
+    catscope.joback_boiling_5=joback_boiling_5;
+    
     var joback_nr1_1=$("#joback_nr1_1").val().toNum();
     var joback_nr1_2=$("#joback_nr1_2").val().toNum();
     var joback_nr1_3=$("#joback_nr1_3").val().toNum();
@@ -804,7 +816,7 @@ $(document).ready(function(){
     
     var joback_sulphur2=[joback_sulphur2_1, joback_sulphur2_2, joback_sulphur2_3];
     joback_sulphur2=replaceNaN( joback_sulphur2) 
-    catscope.joback_sulphur2=joback_sulphur2
+
     
     var joback_1=joback_nr1.concat(joback_r1,joback_halo1,joback_oxy1,joback_nitro1,joback_sulphur1);
     catscope.joback_1=joback_1;
@@ -812,13 +824,47 @@ $(document).ready(function(){
     var dTc_array=[0.0141,0.0189,0.0164,0.0067,0.0113,0.0129,0.0117,0.0026,0.0027,0.002,0.001,0.0122,0.0042,0.0082,0.0143,0.0111,0.0105,0.0133,0.0068,0.0741,0.024,0.0168,0.0098,0.038,0.0284,0.0379,0.0791,0.0481,0.0143,0.0243,0.0295,0.013,0.0169,0.0255,0.0085,0.0496,0.0437,0.0031,0.0119,0.0019];
      catscope.dTc_array=dTc_array;
      
-    var dTb_array=[23.58,22.88,21.74,18.25,18.18,24.96,24.14,26.15,9.2,27.38,27.15,21.78,21.32,26.73,31.01,-0.03,38.13,66.86,93.84,92.88,76.34,22.42,31.22,76.75,94.97,72.24,169.09,81.1,-10.5,73.23,50.17,52.82,11.74,74.6,57.55,125.66,152.54,63.56,68.78,52.1];
-    catscope.dTb_array=dTb_array;
-   
+     var dPc_array=[-0.0012,0,0.002,0.0043,-0.0028,-0.0006,0.0011,0.0028,-0.0008,0.0016,0.0025,0.0004,0.0061,0.0011,0.0008,-0.0057,-0.0049,0.0057,-0.0034,0.0112,0.0184,0.0015,0.0048,0.0031,0.0028,0.003,0.0077,0.0005,0.0101,0.0109,0.0077,0.0114,0.0074,-0.0099,0.0076,-0.0101,0.0064,0.0084,0.0049,0.0051];
+     catscope.dPc_array=dPc_array;
+     
+     var dVc_array=[65,56,41,27,56,46,38,36,46,37,48,38,27,41,32,27,58,71,97,28,-25,18,13,62,55,82,89,82,36,38,35,29,9,9,34,91,91,63,54,38];
+     catscope.dVc_array=dVc_array;
+     
+     var atoms_array=[4,3,2,1,3,2,1,1,2,1,3,2,1,2,1,1,1,1,1,2,2,1,1,2,2,3,4,3,1,3,2,2,1,1,1,2,2,2,1,1];//used in critical pressure
+     catscope.atoms_array=atoms_array;
+     
+     var dMW_array=[15,14,13,12,14,13,12,12,13,12,14,13,12,13,12,19,35.5,79.9,126.9,17,17,16,16,28,28,29,45,44,16,16,15,15,14,14,14,26,46,33,32,32];
+     catscope.dMW_array=dMW_array;
+     
+     var total_no_atoms=math.eval('joback_1*transpose(atoms_array)',catscope);
+     catscope.total_no_atoms=total_no_atoms;
+     
+    var joback_Tc_1_calc=math.eval('joback_1*transpose(dTc_array)',catscope);//used in calculation of Tc
+    catscope.joback_Tc_1_calc=joback_Tc_1_calc;
     
-    var T_boil=math.eval('198+joback_1*transpose(dTb_array)',catscope);
-    catscope.T_boil=T_boil; 
+    var joback_Tc_1=math.eval('joback_boiling_1*(0.584+0.965*joback_Tc_1_calc-(joback_Tc_1_calc)^2)^-1',catscope);
+    catscope. joback_Tc_1= joback_Tc_1;
     
+    var joback_Pc_1=math.eval('(0.113+0.0032*total_no_atoms-(joback_1*transpose(dPc_array)))^-2',catscope);//bar
+    catscope.joback_Pc_1=joback_Pc_1;
+    
+    var joback_Vc_1=math.eval('17.5+(joback_1*transpose(dVc_array))',catscope);//cm3/mol
+    catscope.joback_Vc_1=joback_Vc_1;
+    
+    var joback_MW_1=math.eval('joback_1*transpose(dMW_array)',catscope);
+    catscope.joback_MW_1=joback_MW_1;
+    
+    var joback_Tr_1=math.eval('joback_Tc_1/temp',catscope);
+    catscope.joback_Tr_1=joback_Tr_1
+    
+    var viscosity_gas_1_num=math.eval('46.1*(joback_Tr_1)^0.618-20.4*exp(-0.449*joback_Tr_1)+19.4*exp(-4.058*joback_Tr_1)+1',catscope);
+    var viscosity_gas_1_denom=math.eval('2.173*10^11*(joback_Tc_1)^(1/6)*(joback_MW_1)^(-1/2)*((joback_Pc_1)*10^5)^(-2/3)',catscope);
+    
+    catscope.viscosity_gas_1_num=viscosity_gas_1_num;
+    catscope.viscosity_gas_1_denom=viscosity_gas_1_denom;
+    
+    var joback_viscosity_gas_1=math.eval('viscosity_gas_1_num/viscosity_gas_1_denom',catscope)
+    catscope.joback_viscosity_gas_1=joback_viscosity_gas_1;
   });
 
   //////////////////////////////////////////////////////////////////////////////////
