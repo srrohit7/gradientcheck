@@ -677,7 +677,149 @@ $(document).ready(function(){
 
     catscope.dr_molname_Array = dr_molname_Array;
   });
-
+    //////////////////////////////////////////////////////////////////////////////////
+  // Function to get the inputs to the Joback method popup into catscope
+  $(".initialize,#temp,#pressure").on('keyup keydown change click', function (){
+    
+    var joback_nr1_1=$("#joback_nr1_1").val().toNum();
+    var joback_nr1_2=$("#joback_nr1_2").val().toNum();
+    var joback_nr1_3=$("#joback_nr1_3").val().toNum();
+    var joback_nr1_4=$("#joback_nr1_4").val().toNum();
+    var joback_nr1_5=$("#joback_nr1_5").val().toNum();
+    var joback_nr1_6=$("#joback_nr1_6").val().toNum();
+    var joback_nr1_7=$("#joback_nr1_7").val().toNum();
+    var joback_nr1_8=$("#joback_nr1_8").val().toNum();
+    var joback_nr1_9=$("#joback_nr1_9").val().toNum();
+    var joback_nr1_10=$("#joback_nr1_10").val().toNum();
+    
+    var joback_nr1=[joback_nr1_1, joback_nr1_2, joback_nr1_3, joback_nr1_4, joback_nr1_5, joback_nr1_6, joback_nr1_7, joback_nr1_8, joback_nr1_9, joback_nr1_10]; 
+    joback_nr1=replaceNaN(joback_nr1);
+    
+    var joback_r1_1=$("#joback_r1_1").val().toNum();
+    var joback_r1_2=$("#joback_r1_2").val().toNum();
+    var joback_r1_3=$("#joback_r1_3").val().toNum();
+    var joback_r1_4=$("#joback_r1_4").val().toNum();
+    var joback_r1_5=$("#joback_r1_5").val().toNum();
+    
+    var joback_r1=[joback_r1_1, joback_r1_2, joback_r1_3, joback_r1_4, joback_r1_5]; 
+    joback_r1=replaceNaN(joback_r1);
+    
+    var joback_halo1_1=$("#joback_halo1_1").val().toNum();
+    var joback_halo1_2=$("#joback_halo1_2").val().toNum();
+    var joback_halo1_3=$("#joback_halo1_3").val().toNum();
+    var joback_halo1_4=$("#joback_halo1_4").val().toNum();
+    
+    var joback_halo1=[joback_halo1_1, joback_halo1_2, joback_halo1_3, joback_halo1_4]; 
+    joback_halo1=replaceNaN(joback_halo1);
+    
+    var joback_oxy1_1=$("#joback_oxy1_1").val().toNum();
+    var joback_oxy1_2=$("#joback_oxy1_2").val().toNum();
+    var joback_oxy1_3=$("#joback_oxy1_3").val().toNum();
+    var joback_oxy1_4=$("#joback_oxy1_4").val().toNum();
+    var joback_oxy1_5=$("#joback_oxy1_5").val().toNum();
+    var joback_oxy1_6=$("#joback_oxy1_6").val().toNum();
+    var joback_oxy1_7=$("#joback_oxy1_7").val().toNum();
+    var joback_oxy1_8=$("#joback_oxy1_8").val().toNum();
+    var joback_oxy1_9=$("#joback_oxy1_9").val().toNum();
+    var joback_oxy1_10=$("#joback_oxy1_10").val().toNum();
+    
+    var joback_oxy1=[joback_oxy1_1, joback_oxy1_2, joback_oxy1_3, joback_oxy1_4, joback_oxy1_5, joback_oxy1_6, joback_oxy1_7, joback_oxy1_8, joback_oxy1_9, joback_oxy1_10]; 
+    joback_oxy1=replaceNaN(joback_oxy1);
+    
+    var joback_nitro1_1=$("#joback_nitro1_1").val().toNum();
+    var joback_nitro1_2=$("#joback_nitro1_2").val().toNum();
+    var joback_nitro1_3=$("#joback_nitro1_3").val().toNum();
+    var joback_nitro1_4=$("#joback_nitro1_4").val().toNum();
+    var joback_nitro1_5=$("#joback_nitro1_5").val().toNum();
+    var joback_nitro1_6=$("#joback_nitro1_6").val().toNum();
+    var joback_nitro1_7=$("#joback_nitro1_7").val().toNum();
+    var joback_nitro1_8=$("#joback_nitro1_8").val().toNum();
+    
+    var joback_nitro1=[joback_nitro1_1, joback_nitro1_2, joback_nitro1_3, joback_nitro1_4, joback_nitro1_5, joback_nitro1_6, joback_nitro1_7, joback_nitro1_8,]; 
+     joback_nitro1=replaceNaN(joback_nitro1);
+    
+    var joback_sulphur1_1=$("#joback_sulphur1_1").val().toNum();
+    var joback_sulphur1_2=$("#joback_sulphur1_2").val().toNum();
+    var joback_sulphur1_3=$("#joback_sulphur1_3").val().toNum();
+    
+    var joback_sulphur1=[joback_sulphur1_1, joback_sulphur1_2, joback_sulphur1_3]; 
+     joback_sulphur1=replaceNaN(joback_sulphur1);
+    
+    var joback_nr2_1=$("#joback_nr2_1").val().toNum();
+    var joback_nr2_2=$("#joback_nr2_2").val().toNum();
+    var joback_nr2_3=$("#joback_nr2_3").val().toNum();
+    var joback_nr2_4=$("#joback_nr2_4").val().toNum();
+    var joback_nr2_5=$("#joback_nr2_5").val().toNum();
+    var joback_nr2_6=$("#joback_nr2_6").val().toNum();
+    var joback_nr2_7=$("#joback_nr2_7").val().toNum();
+    var joback_nr2_8=$("#joback_nr2_8").val().toNum();
+    var joback_nr2_9=$("#joback_nr2_9").val().toNum();
+    var joback_nr2_10=$("#joback_nr2_10").val().toNum();
+    
+    var joback_nr2=[joback_nr2_1, joback_nr2_2, joback_nr2_3, joback_nr2_4, joback_nr2_5, joback_nr2_6, joback_nr2_7, joback_nr2_8, joback_nr2_9, joback_nr2_10]; 
+    
+    var joback_r2_1=$("#joback_r2_1").val().toNum();
+    var joback_r2_2=$("#joback_r2_2").val().toNum();
+    var joback_r2_3=$("#joback_r2_3").val().toNum();
+    var joback_r2_4=$("#joback_r2_4").val().toNum();
+    var joback_r2_5=$("#joback_r2_5").val().toNum();
+    
+    var joback_r2=[joback_r2_1, joback_r2_2, joback_r2_3, joback_r2_4, joback_r2_5]; 
+    
+    var joback_halo2_1=$("#joback_halo2_1").val().toNum();
+    var joback_halo2_2=$("#joback_halo2_2").val().toNum();
+    var joback_halo2_3=$("#joback_halo2_3").val().toNum();
+    var joback_halo2_4=$("#joback_halo2_4").val().toNum();
+    
+    var joback_halo2=[joback_halo2_1, joback_halo2_2, joback_halo2_3, joback_halo2_4]; 
+    
+    var joback_oxy2_1=$("#joback_oxy2_1").val().toNum();
+    var joback_oxy2_2=$("#joback_oxy2_2").val().toNum();
+    var joback_oxy2_3=$("#joback_oxy2_3").val().toNum();
+    var joback_oxy2_4=$("#joback_oxy2_4").val().toNum();
+    var joback_oxy2_5=$("#joback_oxy2_5").val().toNum();
+    var joback_oxy2_6=$("#joback_oxy2_6").val().toNum();
+    var joback_oxy2_7=$("#joback_oxy2_7").val().toNum();
+    var joback_oxy2_8=$("#joback_oxy2_8").val().toNum();
+    var joback_oxy2_9=$("#joback_oxy2_9").val().toNum();
+    var joback_oxy2_10=$("#joback_oxy2_10").val().toNum();
+    
+    var joback_oxy2=[joback_oxy2_1, joback_oxy2_2, joback_oxy2_3, joback_oxy2_4, joback_oxy2_5, joback_oxy2_6, joback_oxy2_7, joback_oxy2_8, joback_oxy2_9, joback_oxy2_10]; 
+    
+    var joback_nitro2_1=$("#joback_nitro2_1").val().toNum();
+    var joback_nitro2_2=$("#joback_nitro2_2").val().toNum();
+    var joback_nitro2_3=$("#joback_nitro2_3").val().toNum();
+    var joback_nitro2_4=$("#joback_nitro2_4").val().toNum();
+    var joback_nitro2_5=$("#joback_nitro2_5").val().toNum();
+    var joback_nitro2_6=$("#joback_nitro2_6").val().toNum();
+    var joback_nitro2_7=$("#joback_nitro2_7").val().toNum();
+    var joback_nitro2_8=$("#joback_nitro2_8").val().toNum();
+    
+    var joback_nitro2=[joback_nitro2_1, joback_nitro2_2, joback_nitro2_3, joback_nitro2_4, joback_nitro2_5, joback_nitro2_6, joback_nitro2_7, joback_nitro2_8]; 
+    
+    
+    var joback_sulphur2_1=$("#joback_sulphur2_1").val().toNum();
+    var joback_sulphur2_2=$("#joback_sulphur2_2").val().toNum();
+    var joback_sulphur2_3=$("#joback_sulphur2_3").val().toNum();
+    
+    var joback_sulphur2=[joback_sulphur2_1, joback_sulphur2_2, joback_sulphur2_3];
+    joback_sulphur2=replaceNaN( joback_sulphur2) 
+    catscope.joback_sulphur2=joback_sulphur2
+    
+    var joback_1=joback_nr1.concat(joback_r1,joback_halo1,joback_oxy1,joback_nitro1,joback_sulphur1);
+    catscope.joback_1=joback_1;
+    
+    var dTc_array=[0.0141,0.0189,0.0164,0.0067,0.0113,0.0129,0.0117,0.0026,0.0027,0.002,0.001,0.0122,0.0042,0.0082,0.0143,0.0111,0.0105,0.0133,0.0068,0.0741,0.024,0.0168,0.0098,0.038,0.0284,0.0379,0.0791,0.0481,0.0143,0.0243,0.0295,0.013,0.0169,0.0255,0.0085,0.0496,0.0437,0.0031,0.0119,0.0019];
+     catscope.dTc_array=dTc_array;
+     
+    var dTb_array=[23.58,22.88,21.74,18.25,18.18,24.96,24.14,26.15,9.2,27.38,27.15,21.78,21.32,26.73,31.01,-0.03,38.13,66.86,93.84,92.88,76.34,22.42,31.22,76.75,94.97,72.24,169.09,81.1,-10.5,73.23,50.17,52.82,11.74,74.6,57.55,125.66,152.54,63.56,68.78,52.1];
+    catscope.dTb_array=dTb_array;
+   
+    
+    var T_boil=math.eval('198+joback_1*transpose(dTb_array)',catscope);
+    catscope.T_boil=T_boil; 
+    
+  });
 
   //////////////////////////////////////////////////////////////////////////////////
   //fuller diffusion volumes, MW, and molecular formulas for all five possible components
