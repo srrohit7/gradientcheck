@@ -745,9 +745,8 @@ $(document).ready(function(){
     var joback_nitro1_5=$("#joback_nitro1_5").val().toNum();
     var joback_nitro1_6=$("#joback_nitro1_6").val().toNum();
     var joback_nitro1_7=$("#joback_nitro1_7").val().toNum();
-    var joback_nitro1_8=$("#joback_nitro1_8").val().toNum();
     
-    var joback_nitro1=[joback_nitro1_1, joback_nitro1_2, joback_nitro1_3, joback_nitro1_4, joback_nitro1_5, joback_nitro1_6, joback_nitro1_7, joback_nitro1_8,]; 
+    var joback_nitro1=[joback_nitro1_1, joback_nitro1_2, joback_nitro1_3, joback_nitro1_4, joback_nitro1_5, joback_nitro1_6, joback_nitro1_7]; 
      joback_nitro1=replaceNaN(joback_nitro1);
     
     var joback_sulphur1_1=$("#joback_sulphur1_1").val().toNum();
@@ -805,9 +804,8 @@ $(document).ready(function(){
     var joback_nitro2_5=$("#joback_nitro2_5").val().toNum();
     var joback_nitro2_6=$("#joback_nitro2_6").val().toNum();
     var joback_nitro2_7=$("#joback_nitro2_7").val().toNum();
-    var joback_nitro2_8=$("#joback_nitro2_8").val().toNum();
     
-    var joback_nitro2=[joback_nitro2_1, joback_nitro2_2, joback_nitro2_3, joback_nitro2_4, joback_nitro2_5, joback_nitro2_6, joback_nitro2_7, joback_nitro2_8]; 
+    var joback_nitro2=[joback_nitro2_1, joback_nitro2_2, joback_nitro2_3, joback_nitro2_4, joback_nitro2_5, joback_nitro2_6, joback_nitro2_7]; 
     
     
     var joback_sulphur2_1=$("#joback_sulphur2_1").val().toNum();
@@ -821,20 +819,32 @@ $(document).ready(function(){
     var joback_1=joback_nr1.concat(joback_r1,joback_halo1,joback_oxy1,joback_nitro1,joback_sulphur1);
     catscope.joback_1=joback_1;
     
-    var dTc_array=[0.0141,0.0189,0.0164,0.0067,0.0113,0.0129,0.0117,0.0026,0.0027,0.002,0.001,0.0122,0.0042,0.0082,0.0143,0.0111,0.0105,0.0133,0.0068,0.0741,0.024,0.0168,0.0098,0.038,0.0284,0.0379,0.0791,0.0481,0.0143,0.0243,0.0295,0.013,0.0169,0.0255,0.0085,0.0496,0.0437,0.0031,0.0119,0.0019];
+    var dTc_array=[0.0141,0.0189,0.0164,0.0067,0.0113,0.0129,0.0117,0.0026,0.0027,0.002,0.001,0.0122,0.0042,0.0082,0.0143,0.0111,0.0105,0.0133,0.0068,0.0741,0.024,0.0168,0.0098,0.038,0.0284,0.0379,0.0791,0.0481,0.0143,0.0243,0.0295,0.013,0.0169,0.0085,0.0496,0.0437,0.0031,0.0119,0.0019];
      catscope.dTc_array=dTc_array;
      
-     var dPc_array=[-0.0012,0,0.002,0.0043,-0.0028,-0.0006,0.0011,0.0028,-0.0008,0.0016,0.0025,0.0004,0.0061,0.0011,0.0008,-0.0057,-0.0049,0.0057,-0.0034,0.0112,0.0184,0.0015,0.0048,0.0031,0.0028,0.003,0.0077,0.0005,0.0101,0.0109,0.0077,0.0114,0.0074,-0.0099,0.0076,-0.0101,0.0064,0.0084,0.0049,0.0051];
+     var dPc_array=[-0.0012,0,0.002,0.0043,-0.0028,-0.0006,0.0011,0.0028,-0.0008,0.0016,0.0025,0.0004,0.0061,0.0011,0.0008,-0.0057,-0.0049,0.0057,-0.0034,0.0112,0.0184,0.0015,0.0048,0.0031,0.0028,0.003,0.0077,0.0005,0.0101,0.0109,0.0077,0.0114,0.0074,0.0076,-0.0101,0.0064,0.0084,0.0049,0.0051];
      catscope.dPc_array=dPc_array;
      
-     var dVc_array=[65,56,41,27,56,46,38,36,46,37,48,38,27,41,32,27,58,71,97,28,-25,18,13,62,55,82,89,82,36,38,35,29,9,9,34,91,91,63,54,38];
+     var dVc_array=[65,56,41,27,56,46,38,36,46,37,48,38,27,41,32,27,58,71,97,28,-25,18,13,62,55,82,89,82,36,38,35,29,9,34,91,91,63,54,38];
      catscope.dVc_array=dVc_array;
      
-     var atoms_array=[4,3,2,1,3,2,1,1,2,1,3,2,1,2,1,1,1,1,1,2,2,1,1,2,2,3,4,3,1,3,2,2,1,1,1,2,2,2,1,1];//used in critical pressure
+     var atoms_array=[4,3,2,1,3,2,1,1,2,1,3,2,1,2,1,1,1,1,1,2,2,1,1,2,2,3,4,3,1,3,2,2,1,1,2,2,2,1,1];//used in critical pressure
      catscope.atoms_array=atoms_array;
      
-     var dMW_array=[15,14,13,12,14,13,12,12,13,12,14,13,12,13,12,19,35.5,79.9,126.9,17,17,16,16,28,28,29,45,44,16,16,15,15,14,14,14,26,46,33,32,32];
+     var dMW_array=[15,14,13,12,14,13,12,12,13,12,14,13,12,13,12,19,35.5,79.9,126.9,17,17,16,16,28,28,29,45,44,16,16,15,15,14,14,26,46,33,32,32];
      catscope.dMW_array=dMW_array;
+     
+     var dCp_a_array=[1.95E1,-9.09E-1,-2.3E1,-6.62E1,2.36E1,-8,-2.81E1,2.74E1,2.45E1,7.87,-6.03,-2.05E1,-9.09E1,-2.14,-8.25,2.65E1,3.33E1,2.86E1,3.21E1,2.57E1,-2.81,2.55E1,1.22E1,6.45,3.04E1,3.09E1,2.41E1,2.45E1,6.82,2.69E1,-1.21,1.18E1,-3.11E1,8.83,3.65E1,2.59E1,3.53E1,1.96E1,1.67E1];
+     catscope.dCp_a_array=dCp_a_array;
+     
+     var dCp_b_array=[-8.08E-3,9.5E-2,2.04E-1,4.27E-1,-3.81E-2,1.05E-1,2.08E-1,-5.57E-2,-2.71E-2,2.01E-2,8.54E-2,1.62E-1,5.57E-1,5.74E-2,1.01E-1,-9.13E-2,-9.63E-2,-6.49E-2,-6.41E-2,-6.91E-2,1.11E-1,-6.32E-2,-1.26E-2,6.7E-2,-8.29E-2,-3.36E-2,4.27E-2,4.02E-2,1.96E-2,-4.12E-2,7.62E-2,-2.3E-2,2.27E-1,-3.84E-3,-7.33E-2,-3.74E-3,-7.58E-2,-5.61E-3,4.81E-3];
+     catscope.dCp_b_array=dCp_b_array;
+     
+     var dCp_c_array=[1.53E-4,-5.44E-5,-2.65E-4,-6.41E-4,1.72E-4,-9.63E-5,-3.06E-4,1.01E-4,1.11E-4,-8.33E-6,-8E-6,-1.6E-4,-9E-4,-1.64E-4,-1.42E-4,1.91E-4,1.87E-4,1.36E-4,1.26E-4,1.77E-4,-1.16E-4,1.11E-4,6.03E-5,-3.57E-5,2.36E-4,1.6E-4,8.04E-5,4.02E-5,1.27E-5,1.64E-4,-4.86E-4,1.07E-4,-3.2E-4,4.35E-5,1.84E-4,1.29E-4,1.85E-4,4.02E-5,2.77E-5];
+     catscope.dCp_c_array=dCp_c_array;
+     
+     var dCp_d_array=[-9.67E-8,1.19E-8,1.2E-7,3.01E-7,-1.03E-7,3.56E-8,1.46E-7,-5.02E-8,-6.78E-8,1.39E-9,-1.8E-8,6.24E-8,4.69E-7,-1.59E-8,6.78E-8,-1.03E-7,-9.96E-8,-7.45E-8,-6.87E-8,-9.88E-8,4.94E-8,-5.48E-8,-3.86E-8,2.86E-9,-1.31E-7,-9.88E-8,-6.87E-8,-4.52E-8,-1.78E-8,-9.76E-8,1.05E-8,-6.28E-8,1.46E-7,-2.6E-8,-1.03E-7,-8.88E-8,-1.03E-7,-2.76E-8,-2.11E-8];
+     catscope.dCp_d_array=dCp_d_array;
      
      var total_no_atoms=math.eval('joback_1*transpose(atoms_array)',catscope);
      catscope.total_no_atoms=total_no_atoms;
@@ -854,7 +864,7 @@ $(document).ready(function(){
     var joback_MW_1=math.eval('joback_1*transpose(dMW_array)',catscope);
     catscope.joback_MW_1=joback_MW_1;
     
-    var joback_Tr_1=math.eval('joback_Tc_1/temp',catscope);
+    var joback_Tr_1=math.eval('temp/joback_Tc_1',catscope);
     catscope.joback_Tr_1=joback_Tr_1
     
     var viscosity_gas_1_num=math.eval('46.1*(joback_Tr_1)^0.618-20.4*exp(-0.449*joback_Tr_1)+19.4*exp(-4.058*joback_Tr_1)+1',catscope);
@@ -865,6 +875,31 @@ $(document).ready(function(){
     
     var joback_viscosity_gas_1=math.eval('viscosity_gas_1_num/viscosity_gas_1_denom',catscope)
     catscope.joback_viscosity_gas_1=joback_viscosity_gas_1;
+    
+    var joback_Cp_a_1=math.eval('joback_1*transpose(dCp_a_array)',catscope);
+    catscope.joback_Cp_a_1=joback_Cp_a_1
+    
+    var joback_Cp_b_1=math.eval('joback_1*transpose(dCp_b_array)',catscope);
+    catscope.joback_Cp_b_1=joback_Cp_b_1
+    
+    var joback_Cp_c_1=math.eval('joback_1*transpose(dCp_c_array)',catscope);
+    catscope.joback_Cp_c_1=joback_Cp_c_1
+    
+    var joback_Cp_d_1=math.eval('joback_1*transpose(dCp_d_array)',catscope);
+    catscope.joback_Cp_d_1=joback_Cp_d_1
+    
+    var joback_Cp_1_mol=math.eval('(joback_Cp_a_1)-37.93+((joback_Cp_b_1)+0.21)*temp+((joback_Cp_c_1)-3.91E-4)*temp^2+((joback_Cp_d_1)+2.06E-7)*temp^3',catscope)//J/mol-K
+    catscope.joback_Cp_1_mol=joback_Cp_1_mol;
+    
+    var joback_Cp_1=math.eval('joback_Cp_1_mol/(joback_MW_1*10^-3)',catscope); //J/kg-K
+    catscope.joback_Cp_1=joback_Cp_1
+    
+    var joback_Cv_1_mol=math.eval('joback_Cp_1_mol-8.314',catscope); //J/mol-K
+    catscope.joback_Cv_1_mol=joback_Cv_1_mol;
+    
+    var joback_thermal_cond_1=math.eval('(1.15+2.033*(8.314/(joback_Cv_1_mol)))*(joback_viscosity_gas_1*joback_Cv_1_mol/(joback_MW_1*10^-3))',catscope)
+    catscope.joback_thermal_cond_1=joback_thermal_cond_1;
+    
   });
 
   //////////////////////////////////////////////////////////////////////////////////
