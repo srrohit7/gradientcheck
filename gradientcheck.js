@@ -218,11 +218,13 @@ $(document).ready(function(){
       $('#tbody_liquid_vb').hide('fast');
       $('#tbody_ideal_gas_dens').show('fast');
       $('#tbody_gas_prandtl_test').show('fast');
+      $('#baroncini_family').hide('fast');
     } else if ($('#dr_reaction_phase').val() == "Liquid Phase"){
       $('#tbody_gas_dvol').hide('fast');
       $('#tbody_liquid_vb').show('fast');
       $('#tbody_ideal_gas_dens').hide('fast');
       $('#tbody_gas_prandtl_test').hide('fast');
+      $('#baroncini_family').show('fast');
     }
   });
 });
@@ -681,17 +683,30 @@ $(document).ready(function(){
   // Function to get the inputs to the Joback method popup into catscope
   $(".initialize,#temp,#pressure").on('keyup keydown change click', function (){
     
-    var joback_boiling_1=$("#joback_boiling_1").val().toNum();
-    var joback_boiling_2=$("#joback_boiling_2").val().toNum();
-    var joback_boiling_3=$("#joback_boiling_3").val().toNum();
-    var joback_boiling_4=$("#joback_boiling_4").val().toNum();
-    var joback_boiling_5=$("#joback_boiling_5").val().toNum();
+    var boiling_point_1=$("#boiling_point_1").val().toNum();
+    var boiling_point_2=$("#boiling_point_2").val().toNum();
+    var boiling_point_3=$("#boiling_point_3").val().toNum();
+    var boiling_point_4=$("#boiling_point_4").val().toNum();
+    var boiling_point_5=$("#boiling_point_5").val().toNum();
     
-    catscope.joback_boiling_1=joback_boiling_1;
-    catscope.joback_boiling_2=joback_boiling_2;
-    catscope.joback_boiling_3=joback_boiling_3;
-    catscope.joback_boiling_4=joback_boiling_4;
-    catscope.joback_boiling_5=joback_boiling_5;
+    catscope.boiling_point_1=boiling_point_1;
+    catscope.boiling_point_2=boiling_point_2;
+    catscope.boiling_point_3=boiling_point_3;
+    catscope.boiling_point_4=boiling_point_4;
+    catscope.boiling_point_5=boiling_point_5;
+    
+
+    var baroncini_family_type_1=$("#baroncini_family_type_1").val();
+    var baroncini_family_type_2=$("#baroncini_family_type_2").val();
+    var baroncini_family_type_3=$("#baroncini_family_type_3").val();
+    var baroncini_family_type_4=$("#baroncini_family_type_4").val();
+    var baroncini_family_type_5=$("#baroncini_family_type_5").val();
+    
+    catscope.baroncini_family_type_1=baroncini_family_type_1;
+    catscope.baroncini_family_type_2=baroncini_family_type_2;
+    catscope.baroncini_family_type_3=baroncini_family_type_3;
+    catscope.baroncini_family_type_4=baroncini_family_type_4;
+    catscope.baroncini_family_type_5=baroncini_family_type_5;
     
     var joback_nr1_1=$("#joback_nr1_1").val().toNum();
     var joback_nr1_2=$("#joback_nr1_2").val().toNum();
@@ -852,7 +867,7 @@ $(document).ready(function(){
     var joback_Tc_1_calc=math.eval('joback_1*transpose(dTc_array)',catscope);//used in calculation of Tc
     catscope.joback_Tc_1_calc=joback_Tc_1_calc;
     
-    var joback_Tc_1=math.eval('joback_boiling_1*(0.584+0.965*joback_Tc_1_calc-(joback_Tc_1_calc)^2)^-1',catscope);
+    var joback_Tc_1=math.eval('boiling_point_1*(0.584+0.965*joback_Tc_1_calc-(joback_Tc_1_calc)^2)^-1',catscope);
     catscope. joback_Tc_1= joback_Tc_1;
     
     var joback_Pc_1=math.eval('(0.113+0.0032*total_no_atoms-(joback_1*transpose(dPc_array)))^-2',catscope); //bar
@@ -900,7 +915,7 @@ $(document).ready(function(){
     var joback_thermal_cond_1=math.eval('(1.15+2.033*(8.314/(joback_Cv_1_mol)))*(joback_viscosity_gas_1*joback_Cv_1_mol/(joback_MW_1*10^-3))',catscope);
     catscope.joback_thermal_cond_1=joback_thermal_cond_1;
     
-    var lee_Tr_boil_1=math.eval('joback_boiling_1/joback_Tc_1',catscope)
+    var lee_Tr_boil_1=math.eval('boiling_point_1/joback_Tc_1',catscope)
     catscope.lee_Tr_boil_1=lee_Tr_boil_1;
     
     var lee_acentric_fun1_1=math.eval('5.92714-(6.09648/lee_Tr_boil_1)-1.28862*log(lee_Tr_boil_1)+0.169347*(lee_Tr_boil_1)^6',catscope); //used in evalvuating acentric factor
@@ -929,6 +944,64 @@ $(document).ready(function(){
        
     var stiel_viscosity_liquid_1=math.eval('(stiel_viscosity_liquid_fun1_1+stiel_viscosity_liquid_fun2_1*lee_acentric_1)/(stiel_inverse_viscosity_liquid_1)/10^3',catscope);
     catscope.stiel_viscosity_liquid_1=stiel_viscosity_liquid_1;
+    
+    if(catscope.baroncini_family_type_1 == "Saturated Hydrocarbons"){
+      catscope.baroncini_A=0.0035;
+      catscope.baroncini_alpha=1.2;
+      catscope.baroncini_beta=0.5;
+      catscope.baroncini_gamma=0.167;
+    } else if(catscope.baroncini_family_type_1 == "Olefins"){
+        catscope.baroncini_A=0.0361;
+        catscope.baroncini_alpha=1.2;
+        catscope.baroncini_beta=1;
+        catscope.baroncini_gamma=0.167;
+    }else if(catscope.baroncini_family_type_1 == "Cycloparaffins"){
+        catscope.baroncini_A=0.031;
+        catscope.baroncini_alpha=1.2;
+        catscope.baroncini_beta=1;
+        catscope.baroncini_gamma=0.167;
+    }else if(catscope.baroncini_family_type_1 == "Aromatics"){
+        catscope.baroncini_A=0.0346;
+        catscope.baroncini_alpha=1.2;
+        catscope.baroncini_beta=1;
+        catscope.baroncini_gamma=0.167;
+    }else if(catscope.baroncini_family_type_1 == "Alcohols"){
+        catscope.baroncini_A=0.00339;
+        catscope.baroncini_alpha=1.2;
+        catscope.baroncini_beta=0.5;
+        catscope.baroncini_gamma=0.167;
+    }else if(catscope.baroncini_family_type_1 == "Organic Acids"){
+        catscope.baroncini_A=0.00319;
+        catscope.baroncini_alpha=1.2;
+        catscope.baroncini_beta=0.5;
+        catscope.baroncini_gamma=0.167;
+    }else if(catscope.baroncini_family_type_1 == "Ketones"){
+        catscope.baroncini_A=0.00383;
+        catscope.baroncini_alpha=1.2;
+        catscope.baroncini_beta=0.5;
+        catscope.baroncini_gamma=0.167;
+    }else if(catscope.baroncini_family_type_1 == "Esters"){
+        catscope.baroncini_A=0.0415;
+        catscope.baroncini_alpha=1.2;
+        catscope.baroncini_beta=1;
+        catscope.baroncini_gamma=0.167;
+    }else if(catscope.baroncini_family_type_1 == "Olefins"){
+        catscope.baroncini_A=0.0385;
+        catscope.baroncini_alpha=1.2;
+        catscope.baroncini_beta=1;
+        catscope.baroncini_gamma=0.167;
+    }else if(catscope.baroncini_family_type_1 == "Halogenated Compounds"){
+        catscope.baroncini_A=0.494;
+        catscope.baroncini_alpha=0;
+        catscope.baroncini_beta=1;
+        catscope.baroncini_gamma=-0.167;
+    }else{
+        //Missenread method
+    }
+    
+    var baroncini_thermal_cond_1=math.eval('baroncini_A*(boiling_point_1)^baroncini_alpha*(joback_MW_1)^-baroncini_beta*(joback_Tc_1)^-baroncini_gamma*(1-joback_Tr_1)^(0.38)*(joback_Tr_1)^(-1/6)',catscope)
+    catscope.baroncini_thermal_cond_1=baroncini_thermal_cond_1;
+     
   });
 
   //////////////////////////////////////////////////////////////////////////////////
