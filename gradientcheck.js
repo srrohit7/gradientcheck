@@ -2998,6 +2998,21 @@ $(document).ready(function(){
 $(document).ready(function(){
         $("#dialog_1").dialog({
             autoOpen: false,
+            width:720,
+                  buttons: [
+          {
+              text: "Calculate",
+              click: function() {
+                $('#temp').trigger('change');
+              }
+          },
+          {
+              text: "Close",
+              click: function() {
+                  $( this ).dialog( "close" );
+              }
+          }
+      ]
         });
         $("#button_thermalcond").on('click',function(){
               $("#dialog_1").dialog("open"); 
@@ -3395,4 +3410,8 @@ function li_kf_MixingFunction(catscope) {
   catscope.li_kf_f = math.eval('2*li_kf_e*transpose(li_kf_d)',catscope); //1xn times 1xn^Transpose returns scalar
 
   return catscope.li_kf_f
+}
+
+function missenread_thermal_cond(boiling_point,no_of_atoms,density_273,MW,Cp_273){
+    var boiling 
 }
