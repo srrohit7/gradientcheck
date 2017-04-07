@@ -683,13 +683,11 @@ $(document).ready(function(){
   // Function to get the inputs to the Joback method popup into catscope
   $(".initialize,#temp,#pressure").on('keyup keydown change click', function (){
     
-
     var boiling_point_1=$("#boiling_point_1").val().toNum();
     var boiling_point_2=$("#boiling_point_2").val().toNum();
     var boiling_point_3=$("#boiling_point_3").val().toNum();
     var boiling_point_4=$("#boiling_point_4").val().toNum();
     var boiling_point_5=$("#boiling_point_5").val().toNum();
-    
     
     catscope.boiling_point_1=boiling_point_1;
     catscope.boiling_point_2=boiling_point_2;
@@ -697,9 +695,6 @@ $(document).ready(function(){
     catscope.boiling_point_4=boiling_point_4;
     catscope.boiling_point_5=boiling_point_5;
     
-    var boiling_point=[boiling_point_1,boiling_point_2];
-    boiling_point=replaceNaN(boiling_point)
-    catscope.boiling_point=boiling_point;
 
     var baroncini_family_type_1=$("#baroncini_family_type_1").val();
     var baroncini_family_type_2=$("#baroncini_family_type_2").val();
@@ -837,15 +832,7 @@ $(document).ready(function(){
 
     
     var joback_1=joback_nr1.concat(joback_r1,joback_halo1,joback_oxy1,joback_nitro1,joback_sulphur1);
-    joback_1=replaceNaN(joback_1);
     catscope.joback_1=joback_1;
-    
-    var joback_2=joback_nr2.concat(joback_r2,joback_halo2,joback_oxy2,joback_nitro2,joback_sulphur2);
-    joback_2=replaceNaN(joback_2);
-    catscope.joback_2=joback_2;
-    
-    var joback=joback_1.concat(joback_2);
-   catscope.joback=joback;
     
     var dTc_array=[0.0141,0.0189,0.0164,0.0067,0.0113,0.0129,0.0117,0.0026,0.0027,0.002,0.001,0.0122,0.0042,0.0082,0.0143,0.0111,0.0105,0.0133,0.0068,0.0741,0.024,0.0168,0.0098,0.038,0.0284,0.0379,0.0791,0.0481,0.0143,0.0243,0.0295,0.013,0.0169,0.0085,0.0496,0.0437,0.0031,0.0119,0.0019];
      catscope.dTc_array=dTc_array;
@@ -874,14 +861,17 @@ $(document).ready(function(){
      var dCp_d_array=[-9.67E-8,1.19E-8,1.2E-7,3.01E-7,-1.03E-7,3.56E-8,1.46E-7,-5.02E-8,-6.78E-8,1.39E-9,-1.8E-8,6.24E-8,4.69E-7,-1.59E-8,6.78E-8,-1.03E-7,-9.96E-8,-7.45E-8,-6.87E-8,-9.88E-8,4.94E-8,-5.48E-8,-3.86E-8,2.86E-9,-1.31E-7,-9.88E-8,-6.87E-8,-4.52E-8,-1.78E-8,-9.76E-8,1.05E-8,-6.28E-8,1.46E-7,-2.6E-8,-1.03E-7,-8.88E-8,-1.03E-7,-2.76E-8,-2.11E-8];
      catscope.dCp_d_array=dCp_d_array;
      
-     var total_no_atoms_array=total_no_atoms_fun(catscope);
-     catscope.total_no_atoms_array=total_no_atoms_array;
-        
-    var joback_Tc_array=joback_Tc_fun(catscope);
-    catscope.joback_Tc_array=joback_Tc_array;
+     var total_no_atoms=math.eval('joback_1*transpose(atoms_array)',catscope);
+     catscope.total_no_atoms=total_no_atoms;
+     
+    var joback_Tc_1_calc=math.eval('joback_1*transpose(dTc_array)',catscope);//used in calculation of Tc
+    catscope.joback_Tc_1_calc=joback_Tc_1_calc;
     
-    var joback_Pc_array=joback_Pc_fun(catscope);
-    catscope.joback_Pc_array=joback_Pc_array;
+    var joback_Tc_1=math.eval('boiling_point_1*(0.584+0.965*joback_Tc_1_calc-(joback_Tc_1_calc)^2)^-1',catscope);
+    catscope. joback_Tc_1= joback_Tc_1;
+    
+    var joback_Pc_1=math.eval('(0.113+0.0032*total_no_atoms-(joback_1*transpose(dPc_array)))^-2',catscope); //bar
+    catscope.joback_Pc_1=joback_Pc_1;
     
     var joback_Vc_1=math.eval('17.5+(joback_1*transpose(dVc_array))',catscope); //cm3/mol
     catscope.joback_Vc_1=joback_Vc_1;
@@ -1011,9 +1001,7 @@ $(document).ready(function(){
     
     var baroncini_thermal_cond_1=math.eval('baroncini_A*(boiling_point_1)^baroncini_alpha*(joback_MW_1)^-baroncini_beta*(joback_Tc_1)^-baroncini_gamma*(1-joback_Tr_1)^(0.38)*(joback_Tr_1)^(-1/6)',catscope)
     catscope.baroncini_thermal_cond_1=baroncini_thermal_cond_1;
-    
-    var racket_density_array=rackett_density(catscope);
-    catscope.racket_density_array=racket_density_array;
+     
   });
 
   //////////////////////////////////////////////////////////////////////////////////
@@ -2100,80 +2088,58 @@ $(document).ready(function(){
     if (catscope.dr_rxn_order == 0) { //look at the user reported reaction order to decide what equation to use
       var rxn_observed_rconst = math.eval('rxn_rate',catscope); //for zero order reactions k = r_obs with units of mol/kg-cat/s
       catscope.rxn_observed_rconst = rxn_observed_rconst;
-
       var rxn_avg_bulk_concentration1 = math.eval('res_bulkconc1*(1 - 0.5*rxn_conversion1)',catscope); //average occurs at 1/2*X due to linear concentration gradient
       catscope.rxn_avg_bulk_concentration1 = rxn_avg_bulk_concentration1;
-
       catscope.rxn_rate_inlet = catscope.rxn_observed_rconst;
       catscope.rxn_rate_outlet = catscope.rxn_observed_rconst;
-
       var rxn_bulkconc_outlet1 = math.eval('res_bulkconc1*(1-rxn_conversion1)',catscope);
       catscope.rxn_bulkconc_outlet1 = rxn_bulkconc_outlet1;
-
       var rxn_surfconcentration_inlet = math.eval('res_bulkconc1 - rxn_observed_rconst/ndim_massXfer_coeff/cat_interfacial_area',catscope);
       catscope.rxn_surfconcentration_inlet = rxn_surfconcentration_inlet;  
 /*
       var rxn_surfconcentration_outlet = math.eval('res_bulkconc1*(1 - rxn_observed_rconst/volumetric_flowrate/res_bulkconc1*mass_catalyst) - rxn_observed_rconst/ndim_massXfer_coeff/cat_interfacial_area',catscope);
       catscope.rxn_surfconcentration_outlet = rxn_surfconcentration_outlet;  
-
       //////////////////////
       var rxn_surfconcentration = math.eval('rxn_avg_bulk_concentration1 - (rxn_rate/ndim_massXfer_coeff/cat_interfacial_area)',catscope); //res_bulkconc1 is incorrect
       catscope.rxn_surfconcentration = rxn_surfconcentration;
-
     } else if (catscope.dr_rxn_order == 1) { 
       //perform calculations
       var rxn_observed_rconst = math.eval('-volumetric_flowrate/mass_catalyst*(log(1-rxn_rate*mass_catalyst/res_bulkconc1/volumetric_flowrate))',catscope);
       catscope.rxn_observed_rconst = rxn_observed_rconst;
-
       var rxn_avg_bulk_concentration1 = math.eval('res_bulkconc1*volumetric_flowrate/rxn_observed_rconst/mass_catalyst*(1-exp(-rxn_observed_rconst/volumetric_flowrate*mass_catalyst))',catscope); 
  /*     catscope.rxn_avg_bulk_concentration1 = rxn_avg_bulk_concentration1;
-
       var rxn_rate_inlet = math.eval('rxn_observed_rconst*res_bulkconc1',catscope); //rate of reaction @ inlet in units of mol/kgcat/s
       catscope.rxn_rate_inlet = rxn_rate_inlet;
-
       var rxn_rate_outlet = math.eval('rxn_observed_rconst*res_bulkconc1*(1/exp(rxn_observed_rconst/volumetric_flowrate*mass_catalyst))',catscope);//rate of reaction @ outlet in units of mol/kgcat/s
       catscope.rxn_rate_outlet = rxn_rate_outlet;  
-
       var rxn_bulkconc_outlet1 = math.eval('res_bulkconc1*(1-rxn_conversion1)',catscope);
       catscope.rxn_bulkconc_outlet1 = rxn_bulkconc_outlet1;
-
       var rxn_surfconcentration_inlet = math.eval('res_bulkconc1 - rxn_observed_rconst*res_bulkconc1/ndim_massXfer_coeff/cat_interfacial_area',catscope);
       catscope.rxn_surfconcentration_inlet = rxn_surfconcentration_inlet;  
-
       var rxn_surfconcentration_outlet = math.eval('res_bulkconc1*(1/exp(rxn_observed_rconst/volumetric_flowrate*mass_catalyst)) - rxn_observed_rconst*res_bulkconc1/ndim_massXfer_coeff/cat_interfacial_area*(1/exp(rxn_observed_rconst/volumetric_flowrate*mass_catalyst))',catscope);
       catscope.rxn_surfconcentration_outlet = rxn_surfconcentration_outlet;  
-
       //////////////////////
       var rxn_surfconcentration = math.eval('rxn_avg_bulk_concentration1 - (rxn_rate/ndim_massXfer_coeff/cat_interfacial_area)',catscope);
   /*    catscope.rxn_surfconcentration = rxn_surfconcentration;
-
     } else if (catscope.dr_rxn_order == 2) {
       //perform calculations
       var rxn_observed_rconst = math.eval('rxn_rate/res_bulkconc1^2/(1-rxn_conversion1)',catscope);
       catscope.rxn_observed_rconst = rxn_observed_rconst;
-
       var rxn_avg_bulk_concentration1 = math.eval('volumetric_flowrate/(rxn_observed_rconst*mass_catalyst)*log(rxn_observed_rconst*res_bulkconc1/volumetric_flowrate*mass_catalyst + 1)',catscope); //2nd Order
       catscope.rxn_avg_bulk_concentration1 = rxn_avg_bulk_concentration1;
-
       var rxn_rate_inlet = math.eval('rxn_observed_rconst*res_bulkconc1^2',catscope); //rate of reaction @ inlet in units of mol/kgcat/s
       catscope.rxn_rate_inlet = rxn_rate_inlet;
-
       var rxn_rate_outlet = math.eval('rxn_observed_rconst*res_bulkconc1^2*(1 - rxn_conversion1)^2',catscope);//rate of reaction @ outlet in units of mol/kgcat/s
       catscope.rxn_rate_outlet = rxn_rate_outlet;  
-
  /*     var rxn_bulkconc_outlet1 = math.eval('res_bulkconc1*(1 - rxn_conversion1)',catscope);
       catscope.rxn_bulkconc_outlet1 = rxn_bulkconc_outlet1;
-
       var rxn_surfconcentration_inlet = math.eval('res_bulkconc1 - rxn_observed_rconst*res_bulkconc1^2/ndim_massXfer_coeff/cat_interfacial_area',catscope);
       catscope.rxn_surfconcentration_inlet = rxn_surfconcentration_inlet;  
-
       var rxn_surfconcentration_outlet = math.eval('res_bulkconc1/(rxn_observed_rconst*res_bulkconc1/volumetric_flowrate*mass_catalyst + 1) - rxn_observed_rconst*res_bulkconc1^2/ndim_massXfer_coeff/cat_interfacial_area*(1/(rxn_observed_rconst*res_bulkconc1/volumetric_flowrate*mass_catalyst + 1))^2',catscope);
       catscope.rxn_surfconcentration_outlet = rxn_surfconcentration_outlet;  
-
       //////////////////////
       var rxn_surfconcentration = math.eval('rxn_avg_bulk_concentration1 - (rxn_rate/ndim_massXfer_coeff/cat_interfacial_area)',catscope);
       catscope.rxn_surfconcentration = rxn_surfconcentration;
-
     }
 */
     var rxn_surfconcentration = math.eval('res_bulkconc1 - (rxn_rate/ndim_massXfer_coeff/cat_interfacial_area)',catscope);
@@ -3424,75 +3390,6 @@ function li_kf_MixingFunction(catscope) {
   return catscope.li_kf_f
 }
 
-/*function missenread_thermal_cond(boiling_point,no_of_atoms,density_273,MW,Cp_273){
+function missenread_thermal_cond(boiling_point,no_of_atoms,density_273,MW,Cp_273){
     var boiling 
-}
-*/
-
-function total_no_atoms(array1,array2){
-	var scope={};
-	scope.array1=array1;
-	scope.array2=array2;
-    var total_atoms=math.eval('array1*transpose(array2)',scope)
-    return total_atoms
-}
-
-function total_no_atoms_fun(catscope){
-	var total_no_atoms=[];
-	for(i=0;i<2;i++){
-		
-		var joback_slice=catscope.joback.slice(i*39,(i+1)*39);
-		catscope.joback_slice=joback_slice;
-		
-		total_no_atoms[i]=math.eval('joback_slice*atoms_array',catscope);
-	}
-	return total_no_atoms;
-}
-
-
-function rackett_density(catscope){
-	var racket_density_calc=[]
-	for(i=0;i<2;i++){
-		catscope.joback_Tc_i=catscope.joback_Tc_array[i];
-		catscope.joback_Pc_i=catscope.joback_Pc_array[i];
-		catscope.joback_Vc_i=catscope.joback_Vc_array[i];
-		
-		racket_density_calc[i]=math.eval('1-(joback_Tc_i)^(2/7)',catscope);
-	}
-	return racket_density_calc
-}
-
-function joback_Tc_fun(catscope){
-	var  joback_Tc_calc=[];
-	var joback_Tc=[];
-	
-	for(i=0;i<2;i++){
-	
-		var joback_slice=catscope.joback.slice(i*39,(i+1)*39);
-		catscope.joback_slice=joback_slice;
-		
-	    catscope.boiling_point_i=catscope.boiling_point[i];
-		joback_Tc_calc[i]=math.eval('joback_slice*transpose(dTc_array)',catscope);//used in calculation of Tc
-		catscope.joback_Tc_calc_i=joback_Tc_calc[i];
-		
-	
-     	joback_Tc[i]=math.eval('boiling_point_i*(0.584+0.965*joback_Tc_calc_i-(joback_Tc_calc_i)^2)^-1',catscope);
-		
-	}
-	return joback_Tc
-}
-
-function joback_Pc_fun(catscope){
-	var joback_Pc=[];
-	
-	for(i=0;i<2;i++){
-	
-		var joback_slice=catscope.joback.slice(i*39,(i+1)*39);
-		catscope.joback_slice=joback_slice;
-		
-		catscope.total_no_atoms_i=catscope.total_no_atoms_array[i];
-     	joback_Pc[i]=math.eval('(0.113+0.0032*total_no_atoms_i-(joback_slice*transpose(dPc_array)))^-2',catscope);
-		
-	}
-	return joback_Pc
 }
