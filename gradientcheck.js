@@ -2992,7 +2992,7 @@ $(document).ready(function(){
           }
       ]
         });
-        $("#button_thermalcond").on('click',function(){
+        $("#button_physicalprop").on('click',function(){
               $("#dialog_1").dialog("open"); 
         });
 });

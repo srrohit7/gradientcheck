@@ -228,6 +228,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<td style="width: 200px;"></td>
 				<td>Number of Products: </td>
 				<td><select id="dr_num_products"><option selected name="One">One</option><option name="Two">Two</option></select></td>
+				<td><button type="button" id="button_physicalprop" class="	plainButton"><span>Estimate Physical Properties</span></button></td>
 			</tr>
 		</table>
 
@@ -274,8 +275,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<td><input id="thermalcond3" type="number" step="any" class="nar"></td>
 				<td id="hide_thermalcond4" style="display: none;"><input id="thermalcond4" type="number" step="any" class="nar"></td>
 				<td><input id="thermalcond5" type="number" step="any" class="nar"></td>	
-				<!--<td> / W × m<sup>-1</sup> × K<sup>-1</sup></td>-->
-				<td><button type="button" id="button_thermalcond" class="	plainButton"><span>Estimate k<sub>f</sub></span></button></td>
+				<td> / W × m<sup>-1</sup> × K<sup>-1</sup></td>
 			</tr>
 			<tbody id="tbody_gas_dvol"><!-- for hiding in the case of liquids -- visible by default -->
 				<tr>
@@ -896,7 +896,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     				<option name="family_7">Ketones</option>
     				<option name="family_8">Esters</option>
     				<option name="family_9">Ethers</option>
-    				<option name="family_10">Halogenated Compounds</option>
+    				<option name="family_10">Halogenated Compounds</optionHalogenated 
     				<option name="family_11">Others</option>
     		</td>
     	</tr>
