@@ -3489,7 +3489,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
     }
 
 
-    var siewalleffectstest = math.eval('R_rctr/cat_effective_radius_ergun',catscope);
+    var siewalleffectstest = math.eval('2*R_rctr/cat_effective_radius_ergun',catscope);
     var sieLHS = math.eval('radial_disp_coeff*avg_density/R_rctr^2/superf_mass_flux',catscope);
     var sieRHS = math.eval('8*sie_kappa*dr_rxn_order/cat_void_frac*log(1/(1-rxn_conversion1))',catscope);
 
