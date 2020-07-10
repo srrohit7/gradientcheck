@@ -3511,7 +3511,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
     }
 
     var mearsRadialInterparticleLHS = math.eval('abs(rxn_enthalpy)*rxn_rate*cat_rho_bulk*R_rctr^2/schlunder_thermal_cond/temp',catscope);
-    var mearsRadialInterparticleRHS = math.eval('0.4*8.3145*temp/rxn_activation_energy/(1 + 4*schlunder_thermal_cond/R_rctr/dixon_h_wall)',catscope);
+    var mearsRadialInterparticleRHS = math.eval('0.4*8.3145*temp/rxn_activation_energy/(1 + 8*schlunder_thermal_cond/R_rctr/dixon_h_wall)',catscope);
 
     writeOut(test_mears_radial_interparticle_LHS_out,mearsRadialInterparticleLHS);
     writeOut(test_mears_radial_interparticle_RHS_out,mearsRadialInterparticleRHS);
