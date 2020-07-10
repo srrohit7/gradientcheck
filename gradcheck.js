@@ -2205,7 +2205,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
       cat_particle_vol = math.eval('4/3*pi*R_p^3',catscope);
       bed_tortuosity = 1.4;
       ndim_peclet_f = math.eval('40 - 29*exp(-7/ndim_reynolds)',catscope);
-      ndim_peclet_r_inf = 11;
+      ndim_peclet_r_inf = 10;
       schlunder_C = 1.25;
       ndim_biot_solid = math.eval('2.41 + 0.156*(R_rctr/cat_effective_radius_volequiv - 1)^2',catscope);
     } else if (catscope.dr_cat_shape == "Cylinders"){
@@ -2213,7 +2213,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
       cat_particle_vol = math.eval('pi*R_p^2*L_p',catscope);
       bed_tortuosity = 1.93;
       ndim_peclet_f = math.eval('11 - 4*exp(-7/ndim_reynolds)',catscope);
-      ndim_peclet_r_inf = 8;
+      ndim_peclet_r_inf = 7;
       schlunder_C = 2.5;
       ndim_biot_solid = math.eval('0.48 + 0.192*(R_rctr/cat_effective_radius_volequiv - 1)^2',catscope);
     } else if (catscope.dr_cat_shape == "Rings"){
