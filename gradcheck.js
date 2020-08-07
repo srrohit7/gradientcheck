@@ -2737,7 +2737,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
   $("#cat_pore_tortuosity,#diff_mixture,#diff_knudsen,#temp,#rxn_surfconcentration,#rxn_surftemperature,#rxn_externalconc_grad").on('keyup keydown change', function (){
 
     var rxn_externalconc_grad_out = "#rxn_externalconc_grad";
- /*
+
     if (catscope.dr_rxn_order == 0) { //look at the user reported reaction order to decide what equation to use
       var rxn_observed_rconst = math.eval('rxn_rate',catscope); //for zero order reactions k = r_obs with units of mol/kg-cat/s
       catscope.rxn_observed_rconst = rxn_observed_rconst;
@@ -2753,7 +2753,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
 
       var rxn_surfconcentration_inlet = math.eval('res_bulkconc1 - rxn_observed_rconst/ndim_massXfer_coeff/cat_interfacial_area',catscope);
       catscope.rxn_surfconcentration_inlet = rxn_surfconcentration_inlet;
-/*
+
       var rxn_surfconcentration_outlet = math.eval('res_bulkconc1*(1 - rxn_observed_rconst/volumetric_flowrate/res_bulkconc1*mass_catalyst) - rxn_observed_rconst/ndim_massXfer_coeff/cat_interfacial_area',catscope);
       catscope.rxn_surfconcentration_outlet = rxn_surfconcentration_outlet;
 
@@ -2767,7 +2767,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
       catscope.rxn_observed_rconst = rxn_observed_rconst;
 
       var rxn_avg_bulk_concentration1 = math.eval('res_bulkconc1*volumetric_flowrate/rxn_observed_rconst/mass_catalyst*(1-exp(-rxn_observed_rconst/volumetric_flowrate*mass_catalyst))',catscope);
- /*     catscope.rxn_avg_bulk_concentration1 = rxn_avg_bulk_concentration1;
+      catscope.rxn_avg_bulk_concentration1 = rxn_avg_bulk_concentration1;
 
       var rxn_rate_inlet = math.eval('rxn_observed_rconst*res_bulkconc1',catscope); //rate of reaction @ inlet in units of mol/kgcat/s
       catscope.rxn_rate_inlet = rxn_rate_inlet;
@@ -2786,7 +2786,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
 
       //////////////////////
       var rxn_surfconcentration = math.eval('rxn_avg_bulk_concentration1 - (rxn_rate/ndim_massXfer_coeff/cat_interfacial_area)',catscope);
-  /*    catscope.rxn_surfconcentration = rxn_surfconcentration;
+     catscope.rxn_surfconcentration = rxn_surfconcentration;
 
     } else if (catscope.dr_rxn_order == 2) {
       //perform calculations
@@ -2802,7 +2802,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
       var rxn_rate_outlet = math.eval('rxn_observed_rconst*res_bulkconc1^2*(1 - rxn_conversion1)^2',catscope);//rate of reaction @ outlet in units of mol/kgcat/s
       catscope.rxn_rate_outlet = rxn_rate_outlet;
 
- /*     var rxn_bulkconc_outlet1 = math.eval('res_bulkconc1*(1 - rxn_conversion1)',catscope);
+     var rxn_bulkconc_outlet1 = math.eval('res_bulkconc1*(1 - rxn_conversion1)',catscope);
       catscope.rxn_bulkconc_outlet1 = rxn_bulkconc_outlet1;
 
       var rxn_surfconcentration_inlet = math.eval('res_bulkconc1 - rxn_observed_rconst*res_bulkconc1^2/ndim_massXfer_coeff/cat_interfacial_area',catscope);
@@ -2816,9 +2816,9 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
       catscope.rxn_surfconcentration = rxn_surfconcentration;
 
     }
-*/
-    var rxn_surfconcentration = math.eval('res_bulkconc1 - (rxn_rate/ndim_massXfer_coeff/cat_interfacial_area)',catscope);
-      catscope.rxn_surfconcentration = rxn_surfconcentration;
+
+    //var rxn_surfconcentration = math.eval('res_bulkconc1 - (rxn_rate/ndim_massXfer_coeff/cat_interfacial_area)',catscope);
+      //catscope.rxn_surfconcentration = rxn_surfconcentration;
 
     var rxn_externalconc_grad = math.eval('(res_bulkconc1 - rxn_surfconcentration)*100/res_bulkconc1',catscope);
     catscope.rxn_externalconc_grad = rxn_externalconc_grad;
@@ -2865,59 +2865,59 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
 
     var rxn_weisz_prater = math.eval('rxn_rate*cat_rho_particle*aris_L^2*(dr_rxn_order+1)/2/rxn_surfconcentration/diff_effective',catscope);
     catscope.rxn_weisz_prater = rxn_weisz_prater;
-    /*var rxn_weisz_prater_inlet = math.eval('rxn_rate_inlet*cat_rho_particle*aris_L^2/rxn_surfconcentration_inlet/diff_effective',catscope);
+    var rxn_weisz_prater_inlet = math.eval('rxn_rate_inlet*cat_rho_particle*aris_L^2/rxn_surfconcentration_inlet/diff_effective',catscope);
     var rxn_weisz_prater_outlet = math.eval('rxn_rate_outlet*cat_rho_particle*aris_L^2/rxn_surfconcentration_outlet/diff_effective',catscope);
 
 
     catscope.rxn_weisz_prater_inlet = rxn_weisz_prater_inlet;
     catscope.rxn_weisz_prater_outlet = rxn_weisz_prater_outlet;
-    */
+
     if (catscope.rxn_weisz_prater < 1) {
       var rxn_thiele = math.eval('rxn_weisz_prater^0.575*(0.334*rxn_weisz_prater^0.972 + (1/rxn_weisz_prater)^0.075)',catscope); //has maximum error of 0.23% at M_WP = 0.999
       catscope.rxn_thiele = rxn_thiele;
-      /*
+
       var rxn_thiele_inlet = math.eval('rxn_weisz_prater_inlet^0.575*(0.334*rxn_weisz_prater_inlet^0.972 + (1/rxn_weisz_prater_inlet)^0.075)',catscope);
       var rxn_thiele_outlet = math.eval('rxn_weisz_prater_outlet^0.575*(0.334*rxn_weisz_prater_outlet^0.972 + (1/rxn_weisz_prater_outlet)^0.075)',catscope);
 
       catscope.rxn_thiele_inlet = rxn_thiele_inlet;
       catscope.rxn_thiele_outlet = rxn_thiele_outlet;
-      */
+
     } else if (catscope.rxn_weisz_prater >= 1) {
       var rxn_thiele = math.eval('rxn_weisz_prater + (1/3)',catscope); //error is lower than above across range that it is applied
       catscope.rxn_thiele = rxn_thiele;
-      /*
+
       var rxn_thiele_inlet = math.eval('rxn_weisz_prater_inlet + (1/3)',catscope);
       var rxn_thiele_outlet = math.eval('rxn_weisz_prater_outlet + (1/3)',catscope);
 
       catscope.rxn_thiele_inlet = rxn_thiele_inlet;
       catscope.rxn_thiele_outlet = rxn_thiele_outlet;
-      */
+
     } else {
       //do nothing
     }
 
     var rxn_eff_factor = math.eval('rxn_weisz_prater/rxn_thiele^2',catscope);
     catscope.rxn_eff_factor = rxn_eff_factor;
-    /*
+
     var rxn_eff_factor_inlet = math.eval('rxn_weisz_prater_inlet/rxn_thiele_inlet^2',catscope);
     var rxn_eff_factor_outlet = math.eval('rxn_weisz_prater_outlet/rxn_thiele_outlet^2',catscope);
 
     catscope.rxn_eff_factor_inlet = rxn_eff_factor_inlet;
     catscope.rxn_eff_factor_outlet = rxn_eff_factor_outlet;
-    */
+
 
     //actually write the data to the appropriate cell
     writeOut(rxn_weisz_prater_out,rxn_weisz_prater);
-    //writeOut(rxn_weisz_prater_inlet_out,rxn_weisz_prater_inlet);
-    //writeOut(rxn_weisz_prater_outlet_out,rxn_weisz_prater_outlet);
+    writeOut(rxn_weisz_prater_inlet_out,rxn_weisz_prater_inlet);
+    writeOut(rxn_weisz_prater_outlet_out,rxn_weisz_prater_outlet);
 
     writeOut(rxn_thiele_out,rxn_thiele);
-    //writeOut(rxn_thiele_inlet_out,rxn_thiele_inlet);
-    //writeOut(rxn_thiele_outlet_out,rxn_thiele_outlet);
+    writeOut(rxn_thiele_inlet_out,rxn_thiele_inlet);
+    writeOut(rxn_thiele_outlet_out,rxn_thiele_outlet);
 
     writeOut(rxn_eff_factor_out,rxn_eff_factor);
-    //writeOut(rxn_eff_factor_inlet_out,rxn_eff_factor_inlet);
-    //writeOut(rxn_eff_factor_outlet_out,rxn_eff_factor_outlet);
+    writeOut(rxn_eff_factor_inlet_out,rxn_eff_factor_inlet);
+    writeOut(rxn_eff_factor_outlet_out,rxn_eff_factor_outlet);
   });
 
 
