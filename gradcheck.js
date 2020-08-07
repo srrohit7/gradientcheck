@@ -218,7 +218,7 @@ $(document).ready(function(){
   });
 });
 
-
+/*
 //////////Trickle phase selection/////
 
 $(document).ready(function(){
@@ -276,7 +276,7 @@ $(document).ready(function(){
     }
   });
 });
-
+*/
 
 ////////////////////////////////////////////////////////////////////////////
 //function for hiding/showing liquid vs. gas relevant cells
@@ -482,13 +482,13 @@ $(document).ready(function(){
     var molweight3 = $("#molweight3").val().toNum();
     var molweight4 = $("#molweight4").val().toNum();
     var molweight5 = $("#molweight5").val().toNum();
-
+/*
     var chosen_phase_1 = $("#chosen_phase_1").val().toNum();
     var chosen_phase_2 = $("#chosen_phase_2").val().toNum();
     var chosen_phase_3 = $("#chosen_phase_3").val().toNum();
     var chosen_phase_4 = $("#chosen_phase_4").val().toNum();
     var chosen_phase_5 = $("#chosen_phase_5").val().toNum();
-
+*/
     //GAS specific
     var difvol1 = $("#difvol1").val().toNum();
     var difvol2 = $("#difvol2").val().toNum();
@@ -564,13 +564,13 @@ $(document).ready(function(){
     catscope.cat_pore_volume = cat_pore_volume;
     catscope.cat_pore_tortuosity = cat_pore_tortuosity;
     catscope.dr_cat_shape = dr_cat_shape;
-
+/*
     catscope.chosen_phase_1=chosen_phase_1;
     catscope.chosen_phase_2=chosen_phase_2;
     catscope.chosen_phase_3=chosen_phase_3;
     catscope.chosen_phase_4=chosen_phase_4;
     catscope.chosen_phase_5=chosen_phase_5;
-
+*/
     catscope.molfrac1 = molfrac1;
     catscope.molfrac2 = molfrac2;
     catscope.molfrac3 = molfrac3;
@@ -1370,7 +1370,7 @@ $(document).ready(function(){
 
       var dr_reaction_phase = $("#dr_reaction_phase").val();
       catscope.dr_reaction_phase = dr_reaction_phase;
-
+/*
       var chosen_phase_1 = $("#chosen_phase_1").val().toNum();
       var chosen_phase_2 = $("#chosen_phase_2").val().toNum();
       var chosen_phase_3 = $("#chosen_phase_3").val().toNum();
@@ -1382,7 +1382,7 @@ $(document).ready(function(){
       catscope.chosen_phase_3=chosen_phase_3;
       catscope.chosen_phase_4=chosen_phase_4;
       catscope.chosen_phase_5=chosen_phase_5;
-
+*/
     if(catscope.dr_reaction_phase == "Gas Phase"){
     	for(i=0;i<5;i++){
     		if( catscope.joback_Cp_kg_array[i] != 0 && catscope.thodos_viscosity_array[i] != 0 && catscope.stiel_kf_array[i] != 0 && catscope.common_used_gashc_array[i] == 0 && catscope.common_used_gasv_array[i] ==0 && catscope.common_used_gastc_array[i] ==0){
