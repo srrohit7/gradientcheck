@@ -2,12 +2,12 @@
 
 <!--
 
-Copyright © 2016 Purdue University All rights reserved. 
+Copyright © 2016 Purdue University All rights reserved.
 
-Developed by: Purdue Catalysis Center, School of Chemical Engineering, Purdue University 
-https://engineering.purdue.edu/~catalyst/ 
+Developed by: Purdue Catalysis Center, School of Chemical Engineering, Purdue University
+https://engineering.purdue.edu/~catalyst/
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimers.
 Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimers in the documentation and/or other materials provided with the distribution.
 Neither the names of ??, nor the names of its contributors may be used to endorse or promote products derived from this Software without specific prior written permission.
@@ -28,14 +28,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script async type="text/javascript" src="js/ddsmoothmenu.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.7.0/math.min.js"></script> 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.7.0/math.min.js"></script>
 	<script type="text/javascript" src="gradcheck.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
 	<script type="text/javascript" src="js/jquery.flot.axislabels.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot.tooltip/0.8.5/jquery.flot.tooltip.min.js"></script>
 
 	<!-- Google Analytics Script-->
-	<script> 
+	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -45,8 +45,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	  ga('send', 'pageview');
 
 	</script>
-	
-	
+
+
 <script type="text/javascript">
     window.onbeforeunload = function() {
         return "Make sure you have your work saved!";
@@ -54,7 +54,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </script>
 
 
-	
+
 </head>
 
 <body>
@@ -80,15 +80,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<li><a href="../gradientcheck/how.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to Use</a></li>
 				<li><a href="../gradientcheck/license.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;License</a></li>
 		<li><a href="../newsoutreach.html">News and Outreach</a></li>
-        <li><a href="../members.html">Members</a></li>	
+        <li><a href="../members.html">Members</a></li>
 		<li><a href="../prospective.html">Prospective Students</a></li>
         <li><a href="../seminars.html">Seminars</a></li>
-        <li><a href="../publications.html">Publications</a></li>	
+        <li><a href="../publications.html">Publications</a></li>
 		<li><a href="../contacts.html">Contact Us</a></li>
         <li><a href="../links.html">Links</a></li>
       </ul>
     </div>
-    <!-- End Menu -->       
+    <!-- End Menu -->
 </div>
 <!-- End Sidebar -->
 
@@ -131,7 +131,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<td>Catalyst Particle Shape:</td>
 				<td>
 					<select id="dr_cat_shape">
-					<option selected name="Spheres">Spheres</option>  
+					<option selected name="Spheres">Spheres</option>
 					<option name="Cylinders">Cylinders</option>
 					<option name="Rings">Rings</option>
 					</select>
@@ -166,9 +166,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			</tr>
 			<tr>
 				<td>Reaction Order (n)</td>
-				<td>					
+				<td>
 					<!--<select id="dr_rxn_order">
-					<option name="0">0</option>  
+					<option name="0">0</option>
 					<option selected name="1">1</option>
 					<option name="2">2</option>
 					</select>-->
@@ -215,7 +215,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			</tr>
 			<tbody style="display: none;">
 				<tr>
-					<td>Initialize:</td> 
+					<td>Initialize:</td>
 					<td><input class="initialize" type="any" readonly step="any"></td>
 				</tr>
 			</tbody>
@@ -247,7 +247,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<td id="hide_molfrac2" style="display: none;"><input id="molfrac2" type="number" step="any" class="nar"></td>
 				<td><input id="molfrac3" type="number" step="any" class="nar"></td>
 				<td id="hide_molfrac4" style="display: none;"><input id="molfrac4" type="number" step="any" class="nar"></td>
-				<td><input id="molfrac5" type="number" step="any" class="nar"></td>			
+				<td><input id="molfrac5" type="number" step="any" class="nar"></td>
 				<td>/ must add to 1</td>
 			</tr>
 			<tr>
@@ -274,7 +274,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<td id="hide_thermalcond2" style="display: none;"><input id="thermalcond2" type="number" step="any" class="nar"></td>
 				<td><input id="thermalcond3" type="number" step="any" class="nar"></td>
 				<td id="hide_thermalcond4" style="display: none;"><input id="thermalcond4" type="number" step="any" class="nar"></td>
-				<td><input id="thermalcond5" type="number" step="any" class="nar"></td>	
+				<td><input id="thermalcond5" type="number" step="any" class="nar"></td>
 				<td> / W × m<sup>-1</sup> × K<sup>-1</sup></td>
 			</tr>
 			<tbody id="tbody_gas_dvol"><!-- for hiding in the case of liquids -- visible by default -->
@@ -284,7 +284,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 					<td id="hide_difvol2" style="display: none;"><input id="difvol2" type="number" step="any" class="nar"></td>
 					<td><input id="difvol3" type="number" step="any" class="nar"></td>
 					<td id="hide_difvol4" style="display: none;"><input id="difvol4" type="number" step="any" class="nar"></td>
-					<td><input id="difvol5" type="number" step="any" class="nar"></td>			
+					<td><input id="difvol5" type="number" step="any" class="nar"></td>
 					<td><button type="button" id="button_fuller_dvol" class="plainButton"><span>Estimate &Sigma;<sub>&nu;,i</sub></span></button></td>
 				</tr>
 			</tbody>
@@ -296,7 +296,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 					<td><input id="liq_density3" type="number" step="any" class="nar"></td>
 					<td id="hide_liq_density4" style="display: none;"><input id="liq_density4" type="number" step="any" class="nar"></td>
 					<td><input id="liq_density5" type="number" step="any" class="nar"></td>
-					
+
 					<td>/ kg × m<sup>-3</sup></td>
 				</tr>
 				<tr>
@@ -305,7 +305,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 					<td id="hide_molar_boil_vol2" style="display: none;"><input id="molar_boil_vol2" type="number" step="any" class="nar"></td>
 					<td><input id="molar_boil_vol3" type="number" step="any" class="nar"></td>
 					<td id="hide_molar_boil_vol4" style="display: none;"><input id="molar_boil_vol4" type="number" step="any" class="nar"></td>
-					<td><input id="molar_boil_vol5" type="number" step="any" class="nar"></td>			
+					<td><input id="molar_boil_vol5" type="number" step="any" class="nar"></td>
 					<td><button type="button" id="button_lebas_vb" class="plainButton"><span>Estimate V<sub>b,i</sub></span></button></td>
 				</tr>
 				<tr>
@@ -314,7 +314,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 					<td id="hide_wilke_assoc_phi2" style="display: none;"><input id="wilke_assoc_phi2" type="number" step="any" class="nar"></td>
 					<td><input id="wilke_assoc_phi3" type="number" step="any" class="nar"></td>
 					<td id="hide_wilke_assoc_phi4" style="display: none;"><input id="wilke_assoc_phi4" type="number" step="any" class="nar"></td>
-					<td><input id="wilke_assoc_phi5" type="number" step="any" class="nar"></td>			
+					<td><input id="wilke_assoc_phi5" type="number" step="any" class="nar"></td>
 					<td><button type="button" id="button_phi_suggestions" class="plainButton"><span>&phi;<sub>Ai</sub> Help</span></button></td>
 				</tr>
 			</tbody>
@@ -327,28 +327,28 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<td><input id="molweight5" type="number" step="any" class="nar"></td>
 				<td>/ g × mol<sup>-1</sup></td>
 			</tr>
-			
+
 		</table>
 
 
 		<p>Notes:</p>
 		<textarea rows="3" cols="100" id="notes_section" style="resize: vertical;"></textarea>
-	
+
 	</form>
 
 
 	<table class="cat-form">
-		
-		<tr class="hrcontainer"> 
+
+		<tr class="hrcontainer">
 			<td style="font-style: italic;"><button id="hide_advanced_input" class="hide"><span>+</span></button>&nbsp;&nbsp;Advanced Option&nbsp;</td>
 			<td colspan="3" valign="middle"><hr class="clcd-output"></td>
 		</tr>
 	</table>
 
 	<form class="insec2">
-		<table class="cat-form">		
+		<table class="cat-form">
 			<tbody id="tbody_advanced_input" style="display: none;">
-				<tr> 
+				<tr>
 					<td></td>
 					<td>Override Estimate of Effective Diffusivity (D<sub>eff</sub>):</td>
 					<td><input type="checkbox" id="ck_override_diffusivity" value="true"></td>
@@ -358,13 +358,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			</tbody>
 		</table>
 	</form>
-		
-	
+
+
 
 	<p>Output Filename:<input id="JSON_filename" value="catalysis" style="width: 300px;">.json <a type="button" id="save_inputs_section_as_JSON" style="margin-left: 150px;" class="orangeButton">Download Form</a></p>
 
 	<!------------- End Inputs Section ------------->
-	
+
 	<!-------------------------------------------------------------------------------------->
 	<!-------------------------------------------------------------------------------------->
 	<!------------------------------- Begin Outputs Section -------------------------------->
@@ -373,7 +373,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	<div id="clcname"><button id="hide_calculated" class="bighide"><span>+</span></button>Calculated Properties<button type="button" id="calculate_all_fields" class="orangeButton" style="margin-right: 25px; float: right; margin-top: 5px;">Calculate all fields</button></div>
 	<span id="calculated">
 	<table class="cat-form"> <!--- Reactants and Products Section ---->
-		<tbody id="tbody_ideal_gas_dens">	
+		<tbody id="tbody_ideal_gas_dens">
 			<tr id="tr_reactants_products_diluent_header_igdens" style='font-size:16px;text-decoration:underline;' align="center">
 				<td> </td>
 				<td>Reactant A</td>
@@ -406,11 +406,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		</tbody>
 	</table>
 
-	
+
 	<table class="cat-form">
-		<!----- Based on Mixing Rules ------>		
+		<!----- Based on Mixing Rules ------>
 		<tr>
-			<td colspan="2" valign="middle"><button id="hide_mixing" class="hide"><span>+</span></button><hr class="clcd-output"></td> 
+			<td colspan="2" valign="middle"><button id="hide_mixing" class="hide"><span>+</span></button><hr class="clcd-output"></td>
 		</tr>
 		<tbody id="mixing">
 		<tr>
@@ -437,10 +437,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			<td>Average Density (&rho;<sub>f</sub>):</td>
 			<td><input id="avg_density" type="any" readonly step="any"> / kg × m<sup>-3</sup></td>
 		</tr>
-		</tbody>	
+		</tbody>
 
 		<tr>
-			<td colspan="2" valign="middle"><button id="hide_catprops" class="hide"><span>+</span></button><hr class="clcd-output"></td> 
+			<td colspan="2" valign="middle"><button id="hide_catprops" class="hide"><span>+</span></button><hr class="clcd-output"></td>
 		</tr>
 		<tbody id="catprops">
 		<tr>
@@ -452,7 +452,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			<td><input id="superf_mass_flux" type="any" readonly step="any"> / kg × m<sup>-2</sup> × s<sup>-1</sup></td>
 		</tr>
 		<tr>
-			<td>Space Time Across Bed (t<sub>bed</sub>):</td> 
+			<td>Space Time Across Bed (t<sub>bed</sub>):</td>
 			<td><input id="bed_space_time" type="any" readonly step="any"> / s</td>
 		</tr>
 		<tr>
@@ -490,9 +490,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		</tbody>
 		<!----- NDims related ------>
 		<tr>
-			<td colspan="2" valign="middle"><button id="hide_ndims" class="hide"><span>+</span></button><hr class="clcd-output"></td> 
+			<td colspan="2" valign="middle"><button id="hide_ndims" class="hide"><span>+</span></button><hr class="clcd-output"></td>
 		</tr>
-		<tbody id="ndims">	
+		<tbody id="ndims">
 		<tr>
 			<td>Reynolds Number:</td>
 			<td><input id="ndim_reynolds" type="any" readonly step="any"> / unitless</td>
@@ -535,35 +535,35 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		<!----- Effectiveness related ------>
 		<table class="cat-form">
 			<tr>
-				<td colspan="5" class="clcd-output"><button id="hide_intgrad" class="hide"><span>+</span></button><hr class="clcd-output"></td> 
+				<td colspan="5" class="clcd-output"><button id="hide_intgrad" class="hide"><span>+</span></button><hr class="clcd-output"></td>
 			</tr>
 			<tbody id="intgrad">
 				<tr style='font-size:16px;text-decoration:underline;'>
 					<td></td>
+					<td>Bed Average</td>
 					<td>Bed Inlet</td>
-					<td style="display:none">Bed Inlet</td>
-					<td style="display:none">Bed Outlet</td>
+					<td>Bed Outlet</td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>Weisz-Prater Modulus (M<sub>WP</sub>):</td>
 					<td><input id="rxn_weisz_prater" type="any" class="narrow" readonly step="any"></td>
-					<td style="display:none"><input id="rxn_weisz_prater_inlet" type="any" class="narrow" readonly step="any"></td>
-					<td style="display:none"><input id="rxn_weisz_prater_outlet" type="any" class="narrow" readonly step="any"></td>
+					<td><input id="rxn_weisz_prater_inlet" type="any" class="narrow" readonly step="any"></td>
+					<td><input id="rxn_weisz_prater_outlet" type="any" class="narrow" readonly step="any"></td>
 					<td> / unitless</td>
 				</tr>
 				<tr>
 					<td>Thiele Modulus (M<sub>T</sub>):</td>
 					<td><input id="rxn_thiele" type="any" class="narrow" readonly step="any"></td>
-					<td style="display:none"><input id="rxn_thiele_inlet" type="any" class="narrow" readonly step="any"></td>
-					<td style="display:none"><input id="rxn_thiele_outlet" type="any" class="narrow" readonly step="any"></td>
+					<td><input id="rxn_thiele_inlet" type="any" class="narrow" readonly step="any"></td>
+					<td><input id="rxn_thiele_outlet" type="any" class="narrow" readonly step="any"></td>
 					<td> / unitless</td
 				</tr>
 				<tr>
 					<td>Effectiveness Factor (&eta;):</td>
 					<td><input id="rxn_eff_factor" type="any" class="narrow" readonly step="any"></td>
-					<td style="display:none"><input id="rxn_eff_factor_inlet" type="any" class="narrow" readonly step="any"></td>
-					<td style="display:none"><input id="rxn_eff_factor_outlet" type="any" class="narrow" readonly step="any"></td>
+					<td><input id="rxn_eff_factor_inlet" type="any" class="narrow" readonly step="any"></td>
+					<td><input id="rxn_eff_factor_outlet" type="any" class="narrow" readonly step="any"></td>
 					<td> / unitless</td>
 				</tr>
 			</tbody>
@@ -571,7 +571,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		<!----- Gradients related ------>
 	<table class="cat-form">
 		<tr>
-			<td colspan="2"><hr class="clcd-output"></td> 
+			<td colspan="2"><hr class="clcd-output"></td>
 		</tr>
 		<tr>
 			<td>External Concentration Gradient:</td>
@@ -594,14 +594,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			<td><input id="rxn_intrinsic_rconst" type="any" readonly step="any"> / m<sup>3</sup> × kg-cat<sup>-1</sup> × s<sup>-1</sup></td>
 		</tr>
 		<tr>
-			<td>Max Possible Diffusion-Limited Rate (r<sub>max</sub>):</td> 
+			<td>Max Possible Diffusion-Limited Rate (r<sub>max</sub>):</td>
 			<td><input id="rxn_maxlimitingrate" type="any" readonly step="any"> / moles of A × kg-cat<sup>-1</sup> × s<sup>-1</sup></td>
 		</tr>
 
 		<!-- THIS IS USED FOR SEVERAL INTERNAL CALCULATIONS, but not displayed -->
 		<tbody style="display: none;">
 			<tr>
-				<td>External Surface Concentration:</td> 
+				<td>External Surface Concentration:</td>
 				<td><input id="rxn_surfconcentration" type="any" readonly step="any"> / mol × m<sup>-3</sup></td>
 			</tr>
 			<tr>
@@ -618,36 +618,36 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	<span id="bedscalegrads">
 	<table class="cat-form">
 		<tr>
-			<td>Axial Dispersion Coefficient (D<sub>axial</sub>):</td> 
+			<td>Axial Dispersion Coefficient (D<sub>axial</sub>):</td>
 			<td><input id="axial_disp_coeff" type="any" readonly step="any"> / m<sup>2</sup> × s<sup>-1</sup></td>
 		</tr>
 		<tr>
-			<td>Radial Dispersion Coefficient (D<sub>rad</sub>):</td> 
+			<td>Radial Dispersion Coefficient (D<sub>rad</sub>):</td>
 			<td><input id="radial_disp_coeff" type="any" readonly step="any"> / m<sup>2</sup> × s<sup>-1</sup></td>
 		</tr>
 		<tr>
-			<td>Pressure Drop Across Bed (&Delta;P):</td> 
+			<td>Pressure Drop Across Bed (&Delta;P):</td>
 			<td><input id="bed_pressure_drop" type="any" readonly step="any"> / bar</td>
 		</tr>
 		<tr>
-			<td colspan="2"><hr class="clcd-output"></td> 
+			<td colspan="2"><hr class="clcd-output"></td>
 		</tr>
 		<tr>
-			<td>Effective Radial Thermal Conductivity (k<sub>re</sub>):</td> 
+			<td>Effective Radial Thermal Conductivity (k<sub>re</sub>):</td>
 			<td><input id="schlunder_thermal_cond" type="any" readonly step="any"> / W × m<sup>-1</sup> × K<sup>-1</sup></td>
 		</tr>
 		<tr>
-			<td>Wall Heat Transfer Coeff (h<sub>w</sub>):</td> 
+			<td>Wall Heat Transfer Coeff (h<sub>w</sub>):</td>
 			<td><input id="dixon_h_wall" type="any" readonly step="any"> / W × m<sup>-2</sup> × K<sup>-1</sup></td>
 		</tr>
 		<tr>
-			<td>Internal Heat Transfer Coeff (h<sub>i</sub>):</td> 
+			<td>Internal Heat Transfer Coeff (h<sub>i</sub>):</td>
 			<td><input id="dixon_h_overall" type="any" readonly step="any"> / W × m<sup>-2</sup> × K<sup>-1</sup></td>
 		</tr>
 		<tr>
-			<td>Axial Temperature Change (&Delta;T<sub>axial</sub>):</td> 
+			<td>Axial Temperature Change (&Delta;T<sub>axial</sub>):</td>
 			<td><input id="bed_axial_max_deltatemp" type="any" readonly step="any"> / K</td>
-		</tr>	
+		</tr>
 	</table>
 	</span>
 
@@ -699,7 +699,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			<td>Is the Reynolds number within the valid range for j-factor correlations?</td>
 		</tr>
 		<tr>
-			<td colspan="3"><hr class="clcd-output"></td> 
+			<td colspan="3"><hr class="clcd-output"></td>
 		</tr>
 		<tr>
 			<td>&beta; &gt; 0.3</td>
@@ -738,7 +738,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		</tr>
 		<!------ begin bed scale gradients validation tests ------>
 		<tr>
-			<td colspan="3"><hr class="clcd-output"></td> 
+			<td colspan="3"><hr class="clcd-output"></td>
 		</tr>
 		<tr>
 		<tr>
@@ -823,7 +823,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			<td id="joback_4" style="display:none"><input id="boiling_point_4" type="number" min="0" step="any"></td>
 			<td id="joback_5"><input id="boiling_point_5" type="number" min="0" step="any"></td>
 		</tr>
-		
+
 		<tr id="baroncini_family" style="display:none">
     		<td>
     		Family
@@ -896,7 +896,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     				<option name="family_7">Ketones</option>
     				<option name="family_8">Esters</option>
     				<option name="family_9">Ethers</option>
-    				<option name="family_10">Halogenated Compounds</optionHalogenated 
+    				<option name="family_10">Halogenated Compounds</optionHalogenated
     				<option name="family_11">Others</option>
     		</td>
     	</tr>
@@ -924,7 +924,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     	<tr class="hrcontainer">
 			<td colspan="2" style="font-style: italic;"><button id="joback_show_nr" class="hide"><span>+</span></button>&nbsp;&nbsp;Non-ring&nbsp;</td>
 			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
-		</tr>    
+		</tr>
 		<tr id="joback_nr" style="display:none">
 		    <td>
 		        <table class="cat-form-narrow">
@@ -935,7 +935,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     </tr>
                     <tr><td>-CH2-</td></tr>
                     <tr><td>>CH-</td></tr>
-                    <tr><td>>C<</td></tr>	
+                    <tr><td>>C<</td></tr>
                     <tr><td>=CH2</td></tr>
                     <tr><td>=CH-</td></tr>
                     <tr><td>=C<</td></tr>
@@ -960,7 +960,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nr1_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr1_9" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr1_10" type="number" min="0" step="any"></td></tr>
-                </table>    
+                </table>
 		    </td>
 		    <td id="joback_2" style="display:none">
                 <table class="cat-form-narrow">
@@ -977,8 +977,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nr2_7" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr2_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr2_9" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_nr2_10" type="number" min="0" step="any"></td></tr>                
-                </table>    
+                    <tr><td><input id="joback_nr2_10" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_3">
                 <table class="cat-form-narrow">
@@ -995,8 +995,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nr3_7" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr3_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr3_9" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_nr3_10" type="number" min="0" step="any"></td></tr>               
-                </table>    
+                    <tr><td><input id="joback_nr3_10" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_4" style="display:none">
                 <table class="cat-form-narrow">
@@ -1013,8 +1013,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nr4_7" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr4_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr4_9" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_nr4_10" type="number" min="0" step="any"></td></tr>               
-                </table>    
+                    <tr><td><input id="joback_nr4_10" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_5">
                 <table class="cat-form-narrow">
@@ -1031,20 +1031,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nr5_7" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr5_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nr5_9" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_nr5_10" type="number" min="0" step="any"></td></tr>               
-                </table>    
+                    <tr><td><input id="joback_nr5_10" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
 		</tr>
 		<tr class="hrcontainer">
 			<td colspan="2" style="font-style: italic;"><button id="joback_show_r" class="hide"><span>+</span></button>&nbsp;&nbsp;Ring&nbsp;</td>
 			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
-		</tr> 
+		</tr>
 		<tr id="joback_r" style="display:none">
 		    <td>
 		        <table class="cat-form-narrow">
                     <tr><td>-CH2-</td></tr>
                     <tr><td>>CH-</td></tr>
-                    <tr><td>>C<</td></tr>	
+                    <tr><td>>C<</td></tr>
                     <tr><td>=CH-</td></tr>
                     <tr><td>=C<</td></tr>
 		        </table>
@@ -1060,7 +1060,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_r1_3" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r1_4" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r1_5" type="number" min="0" step="any"></td></tr>
-                </table>    
+                </table>
 		    </td>
 		    <td id="joback_2" style="display:none">
                 <table class="cat-form-narrow">
@@ -1072,8 +1072,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_r2_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r2_3" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r2_4" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_r2_5" type="number" min="0" step="any"></td></tr>              
-                </table>    
+                    <tr><td><input id="joback_r2_5" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_3">
                 <table class="cat-form-narrow">
@@ -1085,8 +1085,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_r3_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r3_3" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r3_4" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_r3_5" type="number" min="0" step="any"></td></tr>             
-                </table>    
+                    <tr><td><input id="joback_r3_5" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_4" style="display:none">
                 <table class="cat-form-narrow">
@@ -1098,8 +1098,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_r4_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r4_3" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r4_4" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_r4_5" type="number" min="0" step="any"></td></tr>            
-                </table>    
+                    <tr><td><input id="joback_r4_5" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_5">
                 <table class="cat-form-narrow">
@@ -1111,11 +1111,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_r5_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r5_3" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_r5_4" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_r5_5" type="number" min="0" step="any"></td></tr>           
-                </table>    
+                    <tr><td><input id="joback_r5_5" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
-		 </tr> 
-		 
+		 </tr>
+
 		 <tr class="hrcontainer">
 			<td colspan="2" style="font-style: italic;"><button id="joback_show_halo" class="hide"><span>+</span></button>&nbsp;&nbsp;Halogen Groups&nbsp;</td>
 			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
@@ -1139,7 +1139,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_halo1_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_halo1_3" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_halo1_4" type="number" min="0" step="any"></td></tr>
-                </table>    
+                </table>
 		    </td>
 		    <td id="joback_2" style="display:none">
                 <table class="cat-form-narrow">
@@ -1150,8 +1150,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     </tr>
                     <tr><td><input id="joback_halo2_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_halo2_3" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_halo2_4" type="number" min="0" step="any"></td></tr>            
-                </table>    
+                    <tr><td><input id="joback_halo2_4" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_3">
                 <table class="cat-form-narrow">
@@ -1162,8 +1162,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     </tr>
                     <tr><td><input id="joback_halo3_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_halo3_3" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_halo3_4" type="number" min="0" step="any"></td></tr>            
-                </table>    
+                    <tr><td><input id="joback_halo3_4" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_4" style="display:none">
                 <table class="cat-form-narrow">
@@ -1174,8 +1174,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     </tr>
                     <tr><td><input id="joback_halo4_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_halo4_3" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_halo4_4" type="number" min="0" step="any"></td></tr>       
-                </table>    
+                    <tr><td><input id="joback_halo4_4" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_5">
                 <table class="cat-form-narrow">
@@ -1186,10 +1186,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     </tr>
                     <tr><td><input id="joback_halo5_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_halo5_3" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_halo5_4" type="number" min="0" step="any"></td></tr>         
-                </table>    
+                    <tr><td><input id="joback_halo5_4" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
-		</tr> 
+		</tr>
 		<tr class="hrcontainer">
 			<td colspan="2" style="font-style: italic;"><button id="joback_show_oxy" class="hide"><span>+</span></button>&nbsp;&nbsp;Oxygen Groups&nbsp;</td>
 			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
@@ -1204,7 +1204,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     </tr>
                     <tr><td>-OH(phenol)</td></tr>
                     <tr><td>-O-(nonring)</td></tr>
-                    <tr><td>-O-(ring)</td></tr>	
+                    <tr><td>-O-(ring)</td></tr>
                     <tr><td>>C=O(nonring)</td></tr>
                     <tr><td>>C=O(ring)</td></tr>
                     <tr><td>-CH=O</td></tr>
@@ -1229,7 +1229,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_oxy1_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy1_9" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy1_10" type="number" min="0" step="any"></td></tr>
-                </table>    
+                </table>
 		    </td>
 		    <td id="joback_2" style="display:none">
                 <table class="cat-form-narrow">
@@ -1246,8 +1246,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_oxy2_7" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy2_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy2_9" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_oxy2_10" type="number" min="0" step="any"></td></tr>                
-                </table>    
+                    <tr><td><input id="joback_oxy2_10" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_3">
                 <table class="cat-form-narrow">
@@ -1264,8 +1264,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_oxy3_7" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy3_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy3_9" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_oxy3_10" type="number" min="0" step="any"></td></tr>               
-                </table>    
+                    <tr><td><input id="joback_oxy3_10" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_4" style="display:none">
                 <table class="cat-form-narrow">
@@ -1282,8 +1282,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_oxy4_7" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy4_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy4_9" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_oxy4_10" type="number" min="0" step="any"></td></tr>               
-                </table>    
+                    <tr><td><input id="joback_oxy4_10" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_5">
                 <table class="cat-form-narrow">
@@ -1300,8 +1300,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_oxy5_7" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy5_8" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_oxy5_9" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_oxy5_10" type="number" min="0" step="any"></td></tr>               
-                </table>    
+                    <tr><td><input id="joback_oxy5_10" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
 		</tr>
 		<tr class="hrcontainer">
@@ -1318,7 +1318,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     </tr>
                     <tr><td>>NH(nonring)</td></tr>
                     <tr><td>>NH(ring)</td></tr>
-                    <tr><td>>N-(nonring)</td></tr>	
+                    <tr><td>>N-(nonring)</td></tr>
                     <tr><td>=N-(ring)</td></tr>
                     <tr><td>-CN</td></tr>
                     <tr><td>-NO2</td></tr>
@@ -1337,7 +1337,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nitro1_5" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro1_6" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro1_7" type="number" min="0" step="any"></td></tr>
-                </table>    
+                </table>
 		    </td>
 		    <td id="joback_2" style="display:none">
                 <table class="cat-form-narrow">
@@ -1351,8 +1351,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nitro2_4" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro2_5" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro2_6" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_nitro2_7" type="number" min="0" step="any"></td></tr>       
-                </table>    
+                    <tr><td><input id="joback_nitro2_7" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_3">
                 <table class="cat-form-narrow">
@@ -1366,8 +1366,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nitro3_4" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro3_5" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro3_6" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_nitro3_7" type="number" min="0" step="any"></td></tr>           
-                </table>    
+                    <tr><td><input id="joback_nitro3_7" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_4" style="display:none">
                 <table class="cat-form-narrow">
@@ -1381,8 +1381,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nitro4_4" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro4_5" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro4_6" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_nitro4_7" type="number" min="0" step="any"></td></tr>          
-                </table>    
+                    <tr><td><input id="joback_nitro4_7" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_5">
                 <table class="cat-form-narrow">
@@ -1396,14 +1396,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <tr><td><input id="joback_nitro5_4" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro5_5" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_nitro5_6" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_nitro5_7" type="number" min="0" step="any"></td></tr>        
-                </table>    
+                    <tr><td><input id="joback_nitro5_7" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
 		</tr>
 		<tr class="hrcontainer">
 			<td colspan="2" style="font-style: italic;"><button id="joback_show_sulphur" class="hide"><span>+</span></button>&nbsp;&nbsp;Sulphur Groups&nbsp;</td>
 			<!--<td colspan="3" valign="middle"><hr class="clcd-output"></td>-->
-		</tr> 
+		</tr>
 		<tr id="joback_sulphur" style="display:none">
 		    <td>
 		        <table class="cat-form-narrow">
@@ -1421,7 +1421,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     </tr>
                     <tr><td><input id="joback_sulphur1_2" type="number" min="0" step="any"></td></tr>
                     <tr><td><input id="joback_sulphur1_3" type="number" min="0" step="any"></td></tr>
-                </table>    
+                </table>
 		    </td>
 		    <td id="joback_2" style="display:none">
                 <table class="cat-form-narrow">
@@ -1431,8 +1431,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         </td>
                     </tr>
                     <tr><td><input id="joback_sulphur2_2" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_sulphur2_3" type="number" min="0" step="any"></td></tr>           
-                </table>    
+                    <tr><td><input id="joback_sulphur2_3" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_3">
                 <table class="cat-form-narrow">
@@ -1442,8 +1442,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         </td>
                     </tr>
                     <tr><td><input id="joback_sulphur3_2" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_sulphur3_3" type="number" min="0" step="any"></td></tr>          
-                </table>    
+                    <tr><td><input id="joback_sulphur3_3" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_4" style="display:none">
                 <table class="cat-form-narrow">
@@ -1453,8 +1453,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         </td>
                     </tr>
                     <tr><td><input id="joback_sulphur4_2" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_sulphur4_3" type="number" min="0" step="any"></td></tr>    
-                </table>    
+                    <tr><td><input id="joback_sulphur4_3" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
             <td id="joback_5">
                 <table class="cat-form-narrow">
@@ -1464,16 +1464,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         </td>
                     </tr>
                     <tr><td><input id="joback_sulphur5_2" type="number" min="0" step="any"></td></tr>
-                    <tr><td><input id="joback_sulphur5_3" type="number" min="0" step="any"></td></tr>      
-                </table>    
+                    <tr><td><input id="joback_sulphur5_3" type="number" min="0" step="any"></td></tr>
+                </table>
             </td>
-		</tr> 
+		</tr>
 
 		</table>
  </div>
- 
+
 <div id="dialog_fuller_dvol" title="Estimate Diffusion Volumes of Pure Components">
-	
+
 
 <table class="cat-form-narrow">
 	<tr id="tr_reactants_products_diluent_header_fuller" style='font-size:16px;text-decoration:underline;' align="center">
@@ -1614,7 +1614,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<tr><td><input id="fuller_dvol5" type="number" readonly step="any" class="nar"></td></tr>
 			</table>
 		</td>
-		
+
 		<td>
 			<table class="cat-form-narrow">
 				<tr><td></td></tr>
