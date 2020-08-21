@@ -2865,8 +2865,8 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
 
     var rxn_weisz_prater = math.eval('rxn_rate*cat_rho_particle*aris_L^2*(dr_rxn_order+1)/2/rxn_surfconcentration/diff_effective',catscope);
     catscope.rxn_weisz_prater = rxn_weisz_prater;
-    var rxn_weisz_prater_inlet = math.eval('rxn_rate_inlet*cat_rho_particle*aris_L^2/rxn_surfconcentration_inlet/diff_effective',catscope);
-    var rxn_weisz_prater_outlet = math.eval('rxn_rate_outlet*cat_rho_particle*aris_L^2/rxn_surfconcentration_outlet/diff_effective',catscope);
+    var rxn_weisz_prater_inlet = math.eval('rxn_rate_inlet*cat_rho_particle*aris_L^2*(dr_rxn_order+1)/2/rxn_surfconcentration_inlet/diff_effective',catscope);
+    var rxn_weisz_prater_outlet = math.eval('rxn_rate_outlet*cat_rho_particle*aris_L^2*(dr_rxn_order+1)/2/rxn_surfconcentration_outlet/diff_effective',catscope);
 
 
     catscope.rxn_weisz_prater_inlet = rxn_weisz_prater_inlet;
