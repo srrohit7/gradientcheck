@@ -44,11 +44,11 @@ $(document).ready(function(){
   $('#hide_intgrad').on('click', function(){
     $('#intgrad').toggle('fast');
   });
-
+/*
   $('#hide_holdup').on('click', function(){
     $('#trickle_bed1').toggle('fast');
   });
-
+*/
   $('#hide_calculated').on('click', function(){
     $('#calculated').toggle('fast');
   });
@@ -291,18 +291,18 @@ $(document).ready(function(){
       $('#baroncini_family').hide('fast');
       $('#inorganic_acid').hide('fast');
       $('#gas_and_liquid').show('fast');
-      $('#trickle_bed1').hide('fast');
-      $('#trickle_bed2').hide('fast');
+      //$('#trickle_bed1').hide('fast');
+      //$('#trickle_bed2').hide('fast');
       $('#tbody_mole_fraction').hide('fast');
       $('#phase_selection').hide('fast');
-      $('#hide_trickle_bed').hide('fast');
-      $('#tbody_trickle_bed').hide('fast');
-      $('#tricklebedmixture1').hide('fast');
-      $('#tricklebedmixture2').hide('fast');
+      //$('#hide_trickle_bed').hide('fast');
+      //$('#tbody_trickle_bed').hide('fast');
+      //$('#tricklebedmixture1').hide('fast');
+      //$('#tricklebedmixture2').hide('fast');
       $('#tr_reactants_products_diluent_header_igdens').show('fast');
       $('#purecomponentavg').show('fast');
       $('#purecomponentnumbers').show('fast');
-      $('#tricklebednote').hide('fast');
+      //$('#tricklebednote').hide('fast');
     } else if ($('#dr_reaction_phase').val() == "Liquid Phase"){
       $('#tbody_gas_dvol').hide('fast');
       $('#tbody_liquid_vb').show('fast');
@@ -312,19 +312,19 @@ $(document).ready(function(){
       $('#baroncini_family').show('fast');
       $('#inorganic_acid').show('fast');
       $('#gas_and_liquid').show('fast');
-      $('#trickle_bed1').hide('fast');
-      $('#trickle_bed2').hide('fast');
+      //$('#trickle_bed1').hide('fast');
+      //$('#trickle_bed2').hide('fast');
       $('#tbody_mole_fraction').hide('fast');
       $('#phase_selection').hide('fast');
       $('#hide_trickle_bed').hide('fast');
       $('#tbody_trickle_bed').hide('fast');
-      $('#tricklebedmixture1').hide('fast');
-      $('#tricklebedmixture2').hide('fast');
+      //$('#tricklebedmixture1').hide('fast');
+      //$('#tricklebedmixture2').hide('fast');
       $('#tr_reactants_products_diluent_header_igdens').hide('fast');
       $('#purecomponentavg').show('fast');
       $('#purecomponentnumbers').show('fast');
-      $('#tricklebednote').hide('fast');
-    }else if ($('#dr_reaction_phase').val() == "Trickle Bed(Gas-Liquid)"){
+      //$('#tricklebednote').hide('fast');
+    /*}else if ($('#dr_reaction_phase').val() == "Trickle Bed(Gas-Liquid)"){
       $('#tbody_gas_dvol').show('fast');
       $('#tbody_liquid_vb').show('fast');
       $('#tbody_ideal_gas_dens').hide('fast');
@@ -345,6 +345,7 @@ $(document).ready(function(){
       $('#purecomponentavg').hide('fast');
       $('#purecomponentnumbers').hide('fast');
       $('#tricklebednote').show('fast');
+    */
     }
   });
 });
@@ -1421,7 +1422,7 @@ $(document).ready(function(){
         else{
         }
             }
-        }else if(catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)"){
+        }/*else if(catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)"){
           for(i=0;i<5;i++){
           if(catscope.inorganic_acidd_array[0]!= 0  && catscope.inorganic_acidv_array[0] != 0 && catscope.inorganic_acidtc_array[0] == 0 && catscope.baroncini_kf_array[0] != 0 &&  catscope.common_used_gashc_array[0] == 0 && catscope.common_used_gasv_array[0] ==0 && catscope.common_used_gastc_array[0] == 0 ){
                   writeOut(criticaltemperature1_out,catscope.joback_Tc_array[0])
@@ -1450,7 +1451,7 @@ $(document).ready(function(){
                   writeOut(heatcapacity1_out,catscope.common_used_gashc_array[0])
                   writeOut(fluidvisc1_out,catscope.common_used_gasv_array[0])
                   writeOut(thermalcond1_out,catscope.common_used_gastc_array[0])
-                  writeOut(liq_density1_out,catscope.common_used_gasd_array[0])
+                  writeOut(liq_density1_out,catscope.common_used_gasd_array[0])*/
 };
 
 if(catscope.inorganic_acidd_array[1]!= 0  && catscope.inorganic_acidv_array[1] != 0 && catscope.inorganic_acidtc_array[1] == 0 && catscope.baroncini_kf_array[1] != 0 &&  catscope.common_used_gashc_array[1] == 0 && catscope.common_used_gasv_array[1] ==0 && catscope.common_used_gastc_array[1] == 0 ){
@@ -1685,7 +1686,7 @@ if (catscope.dr_reaction_phase == "Gas Phase") {
         }
       }
     }
-
+/*
 //////////Trickle bed
 if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
       //use alternate method for dr_molname
@@ -1733,7 +1734,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
       }
     }
 
-
+*/
 
 
   });
@@ -2012,7 +2013,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
           writeOut(outputVbNames_popup[index],lebas_vb_Array[index])
         }
       });
-    } else if(catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)"){
+    } /*else if(catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)"){
       for (i in catscope.molWeightArray) {
         if (catscope.lebas_molweight_Array[i] > 0) {
           catscope.molWeightArray[i] = catscope.lebas_molweight_Array[i];
@@ -2038,7 +2039,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
           writeOut(outputVbNames_popup[index],lebas_vb_Array[index])
         }
       });
-    }
+    }*/
   });
 
   //////////////////////////////////////////////////////////////////////////////////
