@@ -2872,7 +2872,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
     catscope.rxn_weisz_prater_inlet = rxn_weisz_prater_inlet;
     catscope.rxn_weisz_prater_outlet = rxn_weisz_prater_outlet;
 
-    if (catscope.rxn_weisz_prater < 1) {
+    if (catscope.rxn_weisz_prater <= 1) {
       var rxn_thiele = math.eval('rxn_weisz_prater^0.575*(0.334*rxn_weisz_prater^0.972 + (1/rxn_weisz_prater)^0.075)',catscope); //has maximum error of 0.23% at M_WP = 0.999
       catscope.rxn_thiele = rxn_thiele;
 
@@ -2882,7 +2882,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
       catscope.rxn_thiele_inlet = rxn_thiele_inlet;
       catscope.rxn_thiele_outlet = rxn_thiele_outlet;
 
-    } else if (catscope.rxn_weisz_prater >= 1) {
+    } else if (1 < catscope.rxn_weisz_prater < 2) {
       var rxn_thiele = math.eval('rxn_weisz_prater + (1/3)',catscope); //error is lower than above across range that it is applied
       catscope.rxn_thiele = rxn_thiele;
 
@@ -2891,6 +2891,17 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
 
       catscope.rxn_thiele_inlet = rxn_thiele_inlet;
       catscope.rxn_thiele_outlet = rxn_thiele_outlet;
+
+    } else if (catscope.rxn_weisz_prater >= 2) {
+      var rxn_thiele = math.eval('rxn_weisz_prater ',catscope); //error is lower than above across range that it is applied
+      catscope.rxn_thiele = rxn_thiele;
+
+      var rxn_thiele_inlet = math.eval('rxn_weisz_prater_inlet ',catscope);
+      var rxn_thiele_outlet = math.eval('rxn_weisz_prater_outlet ',catscope);
+
+      catscope.rxn_thiele_inlet = rxn_thiele_inlet;
+      catscope.rxn_thiele_outlet = rxn_thiele_outlet;
+
 
     } else {
       //do nothing
