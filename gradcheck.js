@@ -1422,7 +1422,9 @@ $(document).ready(function(){
         else{
         }
             }
-        }/*else if(catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)"){
+        };
+        /*
+        else if(catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)"){
           for(i=0;i<5;i++){
           if(catscope.inorganic_acidd_array[0]!= 0  && catscope.inorganic_acidv_array[0] != 0 && catscope.inorganic_acidtc_array[0] == 0 && catscope.baroncini_kf_array[0] != 0 &&  catscope.common_used_gashc_array[0] == 0 && catscope.common_used_gasv_array[0] ==0 && catscope.common_used_gastc_array[0] == 0 ){
                   writeOut(criticaltemperature1_out,catscope.joback_Tc_array[0])
@@ -1451,8 +1453,8 @@ $(document).ready(function(){
                   writeOut(heatcapacity1_out,catscope.common_used_gashc_array[0])
                   writeOut(fluidvisc1_out,catscope.common_used_gasv_array[0])
                   writeOut(thermalcond1_out,catscope.common_used_gastc_array[0])
-                  writeOut(liq_density1_out,catscope.common_used_gasd_array[0])*/
-};
+                  writeOut(liq_density1_out,catscope.common_used_gasd_array[0])
+};*/
 
 if(catscope.inorganic_acidd_array[1]!= 0  && catscope.inorganic_acidv_array[1] != 0 && catscope.inorganic_acidtc_array[1] == 0 && catscope.baroncini_kf_array[1] != 0 &&  catscope.common_used_gashc_array[1] == 0 && catscope.common_used_gasv_array[1] ==0 && catscope.common_used_gastc_array[1] == 0 ){
         writeOut(criticaltemperature2_out,catscope.joback_Tc_array[1])
