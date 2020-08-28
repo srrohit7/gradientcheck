@@ -3007,7 +3007,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
 
     catscope.axial_disp_coeff = axial_disp_coeff;
 
-    var ndim_peclet = math.eval('L_bed*superf_mass_flux/cat_void_frac/avg_density/axial_disp_coeff',catscope);
+    var ndim_peclet = math.eval('L_bed*superf_mass_flux/avg_density/axial_disp_coeff',catscope);
     catscope.ndim_peclet = ndim_peclet;
 
     var ndim_bodenstein = math.eval('2*cat_effective_radius_ergun*superf_mass_flux/avg_density/axial_disp_coeff',catscope); //possibly wrong but not used for anything
