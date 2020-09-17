@@ -2568,7 +2568,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
     //perform calculations
 
     if (catscope.dr_reaction_phase == "Gas Phase") { //first check gas phase vs. liquid phase
-      if (catscope.ndim_reynolds > 10 && catscope.cat_void_frac > 0.25 && catscope.cat_void_frac < 0.95){
+      if (math.ceil(catscope.ndim_reynolds) >= 10 && catscope.cat_void_frac > 0.25 && catscope.cat_void_frac < 0.95){
         var ndim_colburn = math.eval('(0.765/ndim_reynolds^0.82 + 0.365/ndim_reynolds^0.386)/cat_void_frac',catscope); //correlation from Dwivedi and Upadhyay 1977
         catscope.ndim_colburn = ndim_colburn;
         var ndim_massXfer_coeff = math.eval('ndim_colburn*superf_mass_flux/avg_density/ndim_schmidt^(2/3)',catscope);
@@ -2578,7 +2578,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
         //actually write the data to the appropriate cell
         writeOut(ndim_colburn_out,ndim_colburn);
         writeOut(ndim_massXfer_coeff_out,ndim_massXfer_coeff);
-      } else if (catscope.ndim_reynolds < 10) {
+      } else if (math.ceil(catscope.ndim_reynolds) < 10) {
         writeOut(ndim_colburn_out,"Reynolds # is too low");
         writeOut(ndim_massXfer_coeff_out,"Error");
         $('#ndim_colburn').prop("class","clcd-red");
