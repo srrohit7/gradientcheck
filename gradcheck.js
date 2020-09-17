@@ -2578,7 +2578,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
         //actually write the data to the appropriate cell
         writeOut(ndim_colburn_out,ndim_colburn);
         writeOut(ndim_massXfer_coeff_out,ndim_massXfer_coeff);
-      } else if (catscope.ndim_reynolds < 1) {
+      } else if (catscope.ndim_reynolds < 10) {
         writeOut(ndim_colburn_out,"Reynolds # is too low");
         writeOut(ndim_massXfer_coeff_out,"Error");
         $('#ndim_colburn').prop("class","clcd-red");
