@@ -2820,7 +2820,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
     //var rxn_surfconcentration = math.eval('res_bulkconc1 - (rxn_rate/ndim_massXfer_coeff/cat_interfacial_area)',catscope);
       //catscope.rxn_surfconcentration = rxn_surfconcentration;
 
-    var rxn_externalconc_grad = math.eval('(res_bulkconc1 - rxn_surfconcentration)*100/res_bulkconc1',catscope);
+    var rxn_externalconc_grad = math.eval('(rxn_avg_bulk_concentration1 - rxn_surfconcentration)*100/rxn_avg_bulk_concentration1',catscope);
     catscope.rxn_externalconc_grad = rxn_externalconc_grad;
 
     writeOut(rxn_externalconc_grad_out,rxn_externalconc_grad);
@@ -2833,7 +2833,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
     var rxn_externaltemp_grad_out = "#rxn_externaltemp_grad";
 
     //perform calculations
-    var rxn_surftemperature = math.eval('-rxn_enthalpy*ndim_massXfer_coeff/ndim_heatXfer_coeff*(res_bulkconc1 - rxn_surfconcentration) + temp',catscope);
+    var rxn_surftemperature = math.eval('-rxn_enthalpy*ndim_massXfer_coeff/ndim_heatXfer_coeff*(rxn_avg_bulk_concentration1 - rxn_surfconcentration) + temp',catscope);
     catscope.rxn_surftemperature = rxn_surftemperature;
 
     var rxn_externaltemp_grad = math.eval('rxn_surftemperature - temp',catscope);
