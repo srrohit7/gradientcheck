@@ -3678,8 +3678,9 @@ $(document).ready(function(){
           }
       ]
         });
-        $("#button_physicalprop").on('click',function(){
+        $("#button_physicalprop").on('click',function(event){
               $("#dialog_1").dialog("open");
+              event.preventDefault();
         });
 });
 
