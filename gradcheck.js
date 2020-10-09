@@ -4425,10 +4425,10 @@ function rowlinson_Cp_fun(catscope){
         catscope.joback_Cp_mol_i=catscope.joback_Cp_mol_array[i];
         catscope.joback_MW_i=catscope.joback_MW_array[i];
 
-        rowlinson_Cp_calc[i]=math.eval('0.25*new_acentric_i*(17.11+25.2*(1-joback_Tr_i)^0.33*joback_Tr_i^-1+1.742*(1-joback_Tr_i)^-1)',catscope);
+        rowlinson_Cp_calc[i]=math.eval('new_acentric_i*(4.277+6.3*(1-joback_Tr_i)^0.33*joback_Tr_i^-1+0.435*(1-joback_Tr_i)^-1)',catscope);
         catscope.rowlinson_Cp_calc_i=rowlinson_Cp_calc[i];
 
-        rowlinson_Cp_mol[i]=math.eval('8.314*(1.45+0.45*(1-joback_Tr_i)^-1+rowlinson_Cp_calc_i)+joback_Cp_mol_i',catscope);
+        rowlinson_Cp_mol[i]=math.eval('8.314*(1.586+0.49*(1-joback_Tr_i)^-1+rowlinson_Cp_calc_i)+joback_Cp_mol_i',catscope);
         catscope.rowlinson_Cp_mol_i=rowlinson_Cp_mol[i];
 
         rowlinson_Cp_kg[i]=math.eval('rowlinson_Cp_mol_i/(joback_MW_i*10^-3)',catscope); //J/kg-K
