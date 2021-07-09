@@ -227,7 +227,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<td style="width: 200px;"></td>
 				<td>Number of Products: </td>
 				<td><select id="dr_num_products"><option selected name="One">One</option><option name="Two">Two</option></select></td>
-				<td><button type="button" id="button_physicalprop" class="plainButton"><span>Estimate Physical Properties</span></button></td>
+				<td><button type="button" id="button_physicalprop" class="plainButton" style=" height:20px; width:250px;"><span>Estimate Physical Properties</span></button></td>
 			</tr>
 		</table>
 
@@ -240,6 +240,44 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				<td>Diluent C</td>
 				<td></td>
 			</tr>
+			<tr id="phase_selection" style="display:none">
+			<td>
+			Phase:
+			</td>
+			<td id="joback_1" align="center">
+    			<select id="chosen_phase_1">
+    				<option selected name="Phase">Select</option>
+				<option name="selection_1">Gas</option>
+    				<option name="selection_2">Liquid</option>
+    			</td>
+			</td>
+			<td id="joback_2" style="display:none" align="center">
+    			<select id="chosen_phase_2">
+    				<option selected name="Phase">Select</option>
+				<option name="selection_1">Gas</option>
+    				<option name="selection_2">Liquid</option>
+    			</td>
+			</td>
+			<td id="joback_3" align="center">
+    			<select id="chosen_phase_3">
+    				<option selected name="Phase">Select</option>
+				<option name="selection_1">Gas</option>
+    				<option name="selection_2">Liquid</option>
+    			</td>
+			</td>
+			<td id="joback_4" style="display:none" align="center">
+    			<select id="chosen_phase_4">
+    				<option selected name="Phase">Select</option>
+				<option name="selection_1">Gas</option>
+    				<option name="selection_2">Liquid</option>
+    			</td>
+			</td>
+			<td id="joback_5" align="center">
+    			<select id="chosen_phase_5">
+    				<option selected name="Phase">Select</option>
+				<option name="selection_1">Gas</option>
+    				<option name="selection_2">Liquid</option>
+    			</td>
 			<tr>
 				<td>Inlet Mole Fractions:</td>
 				<td class="MainReact"><input id="molfrac1" type="number" step="any" class="nar"></td>
@@ -896,9 +934,330 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     				<option name="family_8">Esters</option>
     				<option name="family_9">Ethers</option>
     				<option name="family_10">Halogenated Compounds</optionHalogenated
-    				<option name="family_11">Others</option>
+
     		</td>
     	</tr>
+			<tr id="common_used_gas" >
+	    		<td>
+	    		Common used gas
+	    		</td>
+	    		<td id="joback_1">
+	    			<select id="common_used_gas_type_1"> <!-- Property used for calculating the thermal conductivity of liquids by Baroncini method-->
+	    				<option selected name="Custom">Select</option>
+					<option name="family_1">CH4</option>
+	    				<option name="family_2">H2O</option>
+	    				<option name="family_3">H2</option>
+	    				<option name="family_4">O2</option>
+	    				<option name="family_5">N2</option>
+	    				<option name="family_6">NH3</option>
+	    				<option name="family_7">CO</option>
+	    				<option name="family_8">CO2</option>
+	    				<option name="family_9">SO2</option>
+	    				<option name="family_10">Cl2</option>
+					<option name="family_11">H2O2</option>
+					<option name="family_12">HNO3</option>
+					<option name="family_13">H2SO4</option>
+					<option name="family_14">HCl</option>
+					<option name="family_15">Monoethanolamine</option>
+					<option name="family_16">Diethanolamine</option>
+					<option name="family_17">Triethanolamine</option>
+					<option name="family_18">Methyl Diethanolamine</option>
+					<option name="family_19">2,4-Diaminotoluene</option>
+					<option name="family_20">Cumene</option>
+
+
+
+
+	    		</td>
+	    		<td id="joback_2" style="display:none">
+	    			<select id="common_used_gas_type_2" >
+	    				<option selected name="Custom">Select</option>
+					<option name="family_1">CH4</option>
+	    				<option name="family_2">H2O</option>
+	    				<option name="family_3">H2</option>
+	    				<option name="family_4">O2</option>
+	    				<option name="family_5">N2</option>
+	    				<option name="family_6">NH3</option>
+	    				<option name="family_7">CO</option>
+	    				<option name="family_8">CO2</option>
+	    				<option name="family_9">SO2</option>
+	    				<option name="family_10">Cl2</option>
+					<option name="family_11">H2O2</option>
+					<option name="family_12">HNO3</option>
+					<option name="family_13">H2SO4</option>
+					<option name="family_14">HCl</option>
+					<option name="family_15">Monoethanolamine</option>
+					<option name="family_16">Diethanolamine</option>
+					<option name="family_17">Triethanolamine</option>
+					<option name="family_18">Methyl Diethanolamine</option>
+					<option name="family_19">2,4-Diaminotoluene</option>
+					<option name="family_20">Cumene</option>
+	    		</td>
+	    		<td id="joback_3">
+	    			<select id="common_used_gas_type_3">
+					<option selected name="Custom">Select</option>
+					<option name="family_1">CH4</option>
+	    				<option name="family_2">H2O</option>
+	    				<option name="family_3">H2</option>
+	    				<option name="family_4">O2</option>
+	    				<option name="family_5">N2</option>
+	    				<option name="family_6">NH3</option>
+	    				<option name="family_7">CO</option>
+	    				<option name="family_8">CO2</option>
+	    				<option name="family_9">SO2</option>
+	    				<option name="family_10">Cl2</option>
+					<option name="family_11">H2O2</option>
+					<option name="family_12">HNO3</option>
+					<option name="family_13">H2SO4</option>
+					<option name="family_14">HCl</option>
+					<option name="family_15">Monoethanolamine</option>
+					<option name="family_16">Diethanolamine</option>
+					<option name="family_17">Triethanolamine</option>
+					<option name="family_18">Methyl Diethanolamine</option>
+					<option name="family_19">2,4-Diaminotoluene</option>
+					<option name="family_20">Cumene</option>
+
+	    		</td>
+	    		<td id="joback_4" style="display:none">
+	    			<select id="common_used_gas_type_4" >
+					<option selected name="Custom">Select</option>
+					<option name="family_1">CH4</option>
+	    				<option name="family_2">H2O</option>
+	    				<option name="family_3">H2</option>
+	    				<option name="family_4">O2</option>
+	    				<option name="family_5">N2</option>
+	    				<option name="family_6">NH3</option>
+	    				<option name="family_7">CO</option>
+	    				<option name="family_8">CO2</option>
+	    				<option name="family_9">SO2</option>
+	    				<option name="family_10">Cl2</option>
+					<option name="family_11">H2O2</option>
+					<option name="family_12">HNO3</option>
+					<option name="family_13">H2SO4</option>
+					<option name="family_14">HCl</option>
+					<option name="family_15">Monoethanolamine</option>
+					<option name="family_16">Diethanolamine</option>
+					<option name="family_17">Triethanolamine</option>
+					<option name="family_18">Methyl Diethanolamine</option>
+					<option name="family_19">2,4-Diaminotoluene</option>
+					<option name="family_20">Cumene</option>
+
+	    		</td>
+	    		<td id="joback_5">
+	    			<select id="common_used_gas_type_5">
+					<option selected name="Custom">Select</option>
+					<option name="family_1">CH4</option>
+	    				<option name="family_2">H2O</option>
+	    				<option name="family_3">H2</option>
+	    				<option name="family_4">O2</option>
+	    				<option name="family_5">N2</option>
+	    				<option name="family_6">NH3</option>
+	    				<option name="family_7">CO</option>
+	    				<option name="family_8">CO2</option>
+	    				<option name="family_9">SO2</option>
+	    				<option name="family_10">Cl2</option>
+					<option name="family_11">H2O2</option>
+					<option name="family_12">HNO3</option>
+					<option name="family_13">H2SO4</option>
+					<option name="family_14">HCl</option>
+					<option name="family_15">Monoethanolamine</option>
+					<option name="family_16">Diethanolamine</option>
+					<option name="family_17">Triethanolamine</option>
+					<option name="family_18">Methyl Diethanolamine</option>
+					<option name="family_19">2,4-Diaminotoluene</option>
+					<option name="family_20">Cumene</option>
+
+	    		</td>
+	    	</tr>
+
+
+		<tr id="inorganic_acid" style="display:none">
+	    		<td>
+	    		Common used liquid
+	    		</td>
+	    		<td id="joback_1">
+	    			<select id="inorganic_acid_type_1"> <!-- Properties for inorganic acid-->
+					<option selected name="Custom">Select</option>
+	    				<option name="inorganic_1">H2O</option>
+	    				<option name="inorganic_2">HCl</option>
+	    				<option name="inorganic_3">H2SO4</option>
+	    				<option name="inorganic_4">SO3</option>
+	    				<option name="inorganic_5">H2S</option>
+	    				<option name="inorganic_6">HF</option>
+	    				<option name="inorganic_7">HCN</option>
+	    				<option name="inorganic_8">HNO3</option>
+	    				<option name="inorganic_9">NH3</option>
+					<option name="inorganic_10">CH3OH</option>
+					<option name="inorganic_11">C2H5OH</option>
+					<option name="inorganic_12">C3H7OH</option>
+					<option name="inorganic_13">n-Butanol</option>
+					<option name="inorganic_14">Ethylene glycol</option>
+					<option name="inorganic_15">Propylene glycol</option>
+					<option name="inorganic_16">Diethylene glycol</option>
+					<option name="inorganic_17">Triethylene glycol</option>
+					<option name="inorganic_18">Aniline</option>
+					<option name="inorganic_19">Monoethanolamine</option>
+					<option name="inorganic_20">Diethanolamine</option>
+					<option name="inorganic_21">Triethanolamine</option>
+					<option name="inorganic_22">Methyl diethanolamine</option>
+					<option name="inorganic_23">Phenol</option>
+					<option name="inorganic_24">Diphenyl oxide</option>
+					<option name="inorganic_25">Butyl acrylate</option>
+					<option name="inorganic_26">2,4-Dinitrotoluene</option>
+					<option name="inorganic_27">2,4-Diaminotoluene</option>
+					<option name="inorganic_28">vinyl chloride</option>
+					<option name="inorganic_29">TDI</option>
+					<option name="inorganic_30">MDI</option>
+
+
+
+	    		</td>
+
+
+	    		</td>
+	    		<td id="joback_2" style="display:none">
+	    			<select id="inorganic_acid_type_2" >
+	    				<option selected name="Custom">Select</option>
+	    				<option name="inorganic_1">H2O</option>
+	    				<option name="inorganic_2">HCl</option>
+	    				<option name="inorganic_3">H2SO4</option>
+	    				<option name="inorganic_4">SO3</option>
+	    				<option name="inorganic_5">H2S</option>
+	    				<option name="inorganic_6">HF</option>
+	    				<option name="inorganic_7">HCN</option>
+	    				<option name="inorganic_8">HNO3</option>
+	    				<option name="inorganic_9">NH3</option>
+					<option name="inorganic_10">CH3OH</option>
+					<option name="inorganic_11">C2H5OH</option>
+					<option name="inorganic_12">C3H7OH</option>
+					<option name="inorganic_13">n-Butanol</option>
+					<option name="inorganic_14">Ethylene glycol</option>
+					<option name="inorganic_15">Propylene glycol</option>
+					<option name="inorganic_16">Diethylene glycol</option>
+					<option name="inorganic_17">Triethylene glycol</option>
+					<option name="inorganic_18">Aniline</option>
+					<option name="inorganic_19">Monoethanolamine</option>
+					<option name="inorganic_20">Diethanolamine</option>
+					<option name="inorganic_21">Triethanolamine</option>
+					<option name="inorganic_22">Methyl diethanolamine</option>
+					<option name="inorganic_23">Phenol</option>
+					<option name="inorganic_24">Diphenyl oxide</option>
+					<option name="inorganic_25">Butyl acrylate</option>
+					<option name="inorganic_26">2,4-Dinitrotoluene</option>
+					<option name="inorganic_27">2,4-Diaminotoluene</option>
+					<option name="inorganic_28">vinyl chloride</option>
+					<option name="inorganic_29">TDI</option>
+					<option name="inorganic_30">MDI</option>
+
+	    		</td>
+	    		</td>
+	    		<td id="joback_3">
+	    			<select id="inorganic_acid_type_3">
+	    				<option selected name="Custom">Select</option>
+	    				<option name="inorganic_1">H2O</option>
+	    				<option name="inorganic_2">HCl</option>
+	    				<option name="inorganic_3">H2SO4</option>
+	    				<option name="inorganic_4">SO3</option>
+	    				<option name="inorganic_5">H2S</option>
+	    				<option name="inorganic_6">HF</option>
+	    				<option name="inorganic_7">HCN</option>
+	    				<option name="inorganic_8">HNO3</option>
+	    				<option name="inorganic_9">NH3</option>
+					<option name="inorganic_10">CH3OH</option>
+					<option name="inorganic_11">C2H5OH</option>
+					<option name="inorganic_12">C3H7OH</option>
+					<option name="inorganic_13">n-Butanol</option>
+					<option name="inorganic_14">Ethylene glycol</option>
+					<option name="inorganic_15">Propylene glycol</option>
+					<option name="inorganic_16">Diethylene glycol</option>
+					<option name="inorganic_17">Triethylene glycol</option>
+					<option name="inorganic_18">Aniline</option>
+					<option name="inorganic_19">Monoethanolamine</option>
+					<option name="inorganic_20">Diethanolamine</option>
+					<option name="inorganic_21">Triethanolamine</option>
+					<option name="inorganic_22">Methyl diethanolamine</option>
+					<option name="inorganic_23">Phenol</option>
+					<option name="inorganic_24">Diphenyl oxide</option>
+					<option name="inorganic_25">Butyl acrylate</option>
+					<option name="inorganic_26">2,4-Dinitrotoluene</option>
+					<option name="inorganic_27">2,4-Diaminotoluene</option>
+					<option name="inorganic_28">vinyl chloride</option>
+					<option name="inorganic_29">TDI</option>
+					<option name="inorganic_30">MDI</option>
+
+	    		</td>
+	    		<td id="joback_4" style="display:none">
+	    			<select id="inorganic_acid_type_4" >
+	    				<option selected name="Custom">Select</option>
+	    				<option name="inorganic_1">H2O</option>
+	    				<option name="inorganic_2">HCl</option>
+	    				<option name="inorganic_3">H2SO4</option>
+	    				<option name="inorganic_4">SO3</option>
+	    				<option name="inorganic_5">H2S</option>
+	    				<option name="inorganic_6">HF</option>
+	    				<option name="inorganic_7">HCN</option>
+	    				<option name="inorganic_8">HNO3</option>
+	    				<option name="inorganic_9">NH3</option>
+					<option name="inorganic_10">CH3OH</option>
+					<option name="inorganic_11">C2H5OH</option>
+					<option name="inorganic_12">C3H7OH</option>
+					<option name="inorganic_13">n-Butanol</option>
+					<option name="inorganic_14">Ethylene glycol</option>
+					<option name="inorganic_15">Propylene glycol</option>
+					<option name="inorganic_16">Diethylene glycol</option>
+					<option name="inorganic_17">Triethylene glycol</option>
+					<option name="inorganic_18">Aniline</option>
+					<option name="inorganic_19">Monoethanolamine</option>
+					<option name="inorganic_20">Diethanolamine</option>
+					<option name="inorganic_21">Triethanolamine</option>
+					<option name="inorganic_22">Methyl diethanolamine</option>
+					<option name="inorganic_23">Phenol</option>
+					<option name="inorganic_24">Diphenyl oxide</option>
+					<option name="inorganic_25">Butyl acrylate</option>
+					<option name="inorganic_26">2,4-Dinitrotoluene</option>
+					<option name="inorganic_27">2,4-Diaminotoluene</option>
+					<option name="inorganic_28">vinyl chloride</option>
+					<option name="inorganic_29">TDI</option>
+					<option name="inorganic_30">MDI</option>
+
+	    		</td>
+	    		</td>
+	    		<td id="joback_5">
+	    			<select id="inorganic_acid_type_5">
+	    				<option selected name="Custom">Select</option>
+	    				<option name="inorganic_1">H2O</option>
+	    				<option name="inorganic_2">HCl</option>
+	    				<option name="inorganic_3">H2SO4</option>
+	    				<option name="inorganic_4">SO3</option>
+	    				<option name="inorganic_5">H2S</option>
+	    				<option name="inorganic_6">HF</option>
+	    				<option name="inorganic_7">HCN</option>
+	    				<option name="inorganic_8">HNO3</option>
+	    				<option name="inorganic_9">NH3</option>
+					<option name="inorganic_10">CH3OH</option>
+					<option name="inorganic_11">C2H5OH</option>
+					<option name="inorganic_12">C3H7OH</option>
+					<option name="inorganic_13">n-Butanol</option>
+					<option name="inorganic_14">Ethylene glycol</option>
+					<option name="inorganic_15">Propylene glycol</option>
+					<option name="inorganic_16">Diethylene glycol</option>
+					<option name="inorganic_17">Triethylene glycol</option>
+					<option name="inorganic_18">Aniline</option>
+					<option name="inorganic_19">Monoethanolamine</option>
+					<option name="inorganic_20">Diethanolamine</option>
+					<option name="inorganic_21">Triethanolamine</option>
+					<option name="inorganic_22">Methyl diethanolamine</option>
+					<option name="inorganic_23">Phenol</option>
+					<option name="inorganic_24">Diphenyl oxide</option>
+					<option name="inorganic_25">Butyl acrylate</option>
+					<option name="inorganic_26">2,4-Dinitrotoluene</option>
+					<option name="inorganic_27">2,4-Diaminotoluene</option>
+					<option name="inorganic_28">vinyl chloride</option>
+					<option name="inorganic_29">TDI</option>
+					<option name="inorganic_30">MDI</option>
+
+	    		</td>
+	    	</tr>
 
     	<tr align="Center">
     		<td >
@@ -1202,9 +1561,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                         </td>
                     </tr>
                     <tr><td>-OH(phenol)</td></tr>
-                    <tr><td>-O-(nonring)</td></tr>
+                    <tr><td>-O-(no ring)</td></tr>
                     <tr><td>-O-(ring)</td></tr>
-                    <tr><td>>C=O(nonring)</td></tr>
+                    <tr><td>>C=O(no ring)</td></tr>
                     <tr><td>>C=O(ring)</td></tr>
                     <tr><td>-CH=O</td></tr>
                     <tr><td>-COOH(acid)</td></tr>
@@ -1315,9 +1674,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                             -NH2
                         </td>
                     </tr>
-                    <tr><td>>NH(nonring)</td></tr>
+                    <tr><td>>NH(no ring)</td></tr>
                     <tr><td>>NH(ring)</td></tr>
-                    <tr><td>>N-(nonring)</td></tr>
+                    <tr><td>>N-(no ring)</td></tr>
                     <tr><td>=N-(ring)</td></tr>
                     <tr><td>-CN</td></tr>
                     <tr><td>-NO2</td></tr>
@@ -1407,7 +1766,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		    <td>
 		        <table class="cat-form-narrow">
                     <tr><td>-SH</td></tr>
-                    <tr><td>-S-(nonring)</td></tr>
+                    <tr><td>-S-(no ring)</td></tr>
                     <tr><td>-S-(ring)</td></tr>
 		        </table>
 		    </td>
