@@ -87,16 +87,16 @@ var val_out = {notation: 'auto', precision: 3}; // see http://mathjs.org/docs/re
 //the below function triggers change for all input IDs in the document, in order to manually update the calculations
 $(document).ready(function(){
   $("#calculate_all_fields").on('click', function (){
-    var ids = $('input[id]').map(function() {
+    var ids = $('input[id]:lt(220)').map(function() {
       return this.id;
     }).get();
-
+    console.log(ids)
     ids = ids.map(function(currentItem){
       return "#" + currentItem //make list of IDs prepended with a "#"
     });
-
+    console.log(ids)
     var idsJoined = ids.join(","); //make into a single long string
-
+    console.log(idsJoined)
     $(idsJoined).trigger("change"); //triggers change to update later calculations
   });
 });////RangaDN
@@ -1384,14 +1384,16 @@ $(document).ready(function(){
       catscope.chosen_phase_4=chosen_phase_4;
       catscope.chosen_phase_5=chosen_phase_5;
 */
+    //console.log(catscope.common_used_gashc_array)
     if(catscope.dr_reaction_phase == "Gas Phase"){
     	for(i=0;i<5;i++){
-    		if( catscope.joback_Cp_kg_array[i] != 0 && catscope.thodos_viscosity_array[i] != 0 && catscope.stiel_kf_array[i] != 0 && catscope.common_used_gashc_array[i] == 0 && catscope.common_used_gasv_array[i] ==0 && catscope.common_used_gastc_array[i] ==0){
-    			writeOut(outputCpNames[i],catscope.joback_Cp_kg_array[i])
+    		//if( catscope.joback_Cp_kg_array[i] != 0 && catscope.thodos_viscosity_array[i] != 0 && catscope.stiel_kf_array[i] != 0 && catscope.common_used_gashc_array[i] == 0 && catscope.common_used_gasv_array[i] ==0 && catscope.common_used_gastc_array[i] ==0){
+        if( isFinite(catscope.joback_Cp_kg_array[i]) && isFinite(catscope.thodos_viscosity_array[i]) && isFinite(catscope.stiel_kf_array[i]) && catscope.common_used_gashc_array[i] == 0 && catscope.common_used_gasv_array[i] ==0 && catscope.common_used_gastc_array[i] ==0){
+          writeOut(outputCpNames[i],catscope.joback_Cp_kg_array[i])
     			writeOut(outputviscNames[i],catscope.thodos_viscosity_array[i])
     			writeOut(outputthermalcondNames[i],catscope.stiel_kf_array[i])
           writeOut(outputwarning[i],"Fluid viscosity might not be accurate for component with -OH and Nitrogen group.Please double check the value if component contain -OH and Nitrogen group.")
-    		}else if ( catscope.common_used_gashc_array[i] != 0 && catscope.common_used_gasv_array[i] !=0 && catscope.common_used_gastc_array[i] !=0 || catscope.joback_Cp_kg_array[i] != 0 || catscope.thodos_viscosity_array[i] !=0 || catscope.stiel_kf_array[i] !=0){
+    		}else if ( catscope.common_used_gashc_array[i] != 0 && catscope.common_used_gasv_array[i] !=0 && catscope.common_used_gastc_array[i] !=0 ){
           writeOut(outputCpNames[i],catscope.common_used_gashc_array[i])
           writeOut(outputviscNames[i],catscope.common_used_gasv_array[i])
           writeOut(outputthermalcondNames[i],catscope.common_used_gastc_array[i])
@@ -1454,9 +1456,10 @@ $(document).ready(function(){
                   writeOut(fluidvisc1_out,catscope.common_used_gasv_array[0])
                   writeOut(thermalcond1_out,catscope.common_used_gastc_array[0])
                   writeOut(liq_density1_out,catscope.common_used_gasd_array[0])
-};*/
+};
 
 if(catscope.inorganic_acidd_array[1]!= 0  && catscope.inorganic_acidv_array[1] != 0 && catscope.inorganic_acidtc_array[1] == 0 && catscope.baroncini_kf_array[1] != 0 &&  catscope.common_used_gashc_array[1] == 0 && catscope.common_used_gasv_array[1] ==0 && catscope.common_used_gastc_array[1] == 0 ){
+        console.log('hi')
         writeOut(criticaltemperature2_out,catscope.joback_Tc_array[1])
         writeOut(criticalpressure2_out,catscope.joback_Pc_array[1])
         writeOut(liq_density2_out,catscope.rackett_density_array[1])
@@ -1464,6 +1467,7 @@ if(catscope.inorganic_acidd_array[1]!= 0  && catscope.inorganic_acidv_array[1] !
         writeOut(fluidvisc2_out, catscope.hiroshi_viscosity_array[1])
         writeOut(thermalcond2_out,catscope.baroncini_kf_array[1])
 }else if( catscope.inorganic_acidd_array[1] != 0  && catscope.inorganic_acidv_array[1] != 0 && catscope.inorganic_acidtc_array[1] != 0  && catscope.baroncini_kf_array[1] == 0  && catscope.common_used_gashc_array[1] == 0 && catscope.common_used_gasv_array[1] ==0 && catscope.common_used_gastc_array[1] == 0){
+        console.log('hi')
         writeOut(criticaltemperature2_out,catscope.inorganic_acidct_array[1])
         writeOut(criticalpressure2_out,catscope.inorganic_acidcp_array[1])
         writeOut(liq_density2_out,catscope.inorganic_acidd_array[1])
@@ -1574,7 +1578,7 @@ if(catscope.inorganic_acidd_array[4]!= 0  && catscope.inorganic_acidv_array[4] !
         writeOut(fluidvisc5_out,catscope.common_used_gasv_array[4])
         writeOut(thermalcond5_out,catscope.common_used_gastc_array[4])
         writeOut(liq_density5_out,catscope.common_used_gasd_array[4])
-};
+};*/
 
 
 });
@@ -2568,7 +2572,7 @@ if (catscope.dr_reaction_phase == "Trickle Bed(Gas-Liquid)") {
     //perform calculations
 
     if (catscope.dr_reaction_phase == "Gas Phase") { //first check gas phase vs. liquid phase
-      if (math.ceil(catscope.ndim_reynolds) >= 10 && catscope.cat_void_frac > 0.25 && catscope.cat_void_frac < 0.95){
+      if (math.ceil(catscope.ndim_reynolds) >= 1 && catscope.cat_void_frac > 0.25 && catscope.cat_void_frac < 0.95){
         var ndim_colburn = math.eval('(0.765/ndim_reynolds^0.82 + 0.365/ndim_reynolds^0.386)/cat_void_frac',catscope); //correlation from Dwivedi and Upadhyay 1977
         catscope.ndim_colburn = ndim_colburn;
         var ndim_massXfer_coeff = math.eval('ndim_colburn*superf_mass_flux/avg_density/ndim_schmidt^(2/3)',catscope);
